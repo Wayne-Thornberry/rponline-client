@@ -7,31 +7,23 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Internal\**" />
-	  <EmbeddedResource Remove="Internal\**" />
-	  <None Remove="Internal\**" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Remove="Menu.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <PackageReference Include="CitizenFX.Core.Client" Version="1.0.5738" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\Proline.ClassicOnline.ScriptObjects\Proline.ClassicOnline.CScriptObjs.csproj" />
-	</ItemGroup>
  
+
+  <ItemGroup>
+    <ProjectReference Include="..\Proline.ClassicComponents.UI\CScreenRendering.csproj" />
+  </ItemGroup> 
+	
+	
 	<ItemGroup>
 		<Reference Include="Microsoft.CSharp" />
 		<Reference Include="Newtonsoft.Json">
 			<HintPath>..\..\..\vendor\Newtonsoft.Json.dll</HintPath>
-		</Reference> 
+		</Reference>
 		<Reference Include="Proline.Resource.Client">
 			<HintPath>E:\artifacts\ResourceLibs\Client\Proline.Resource.Client.dll</HintPath>
-		</Reference> 
+		</Reference>
 		<Reference Include="Proline.Resource.Configuration.Client">
 			<HintPath>E:\artifacts\ResourceLibs\Client\Proline.Resource.Configuration.Client.dll</HintPath>
 		</Reference>
@@ -48,6 +40,7 @@
 			<HintPath>E:\artifacts\ResourceLibs\Client\Proline.Resource.Scripting.Client.dll</HintPath>
 		</Reference>
 	</ItemGroup>
+
 
 
 </Project>

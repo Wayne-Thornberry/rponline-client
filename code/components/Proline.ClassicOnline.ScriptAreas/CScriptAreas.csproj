@@ -11,11 +11,11 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Proline.ClassicComponents.Character\Proline.ClassicOnline.CGameLogic.csproj" />
-    <ProjectReference Include="..\Proline.ClassicComponents.Data\Proline.ClassicOnline.CDataStream.csproj" />
-    <ProjectReference Include="..\Proline.ClassicOnline.CPoolObjects\Proline.ClassicOnline.CPoolObjects.csproj" /> 
-    <ProjectReference Include="..\Proline.ClassicOnline.F8Console\Proline.ClassicOnline.CDebugActions.csproj" />
-    <ProjectReference Include="..\Proline.ClassicOnline.LWScripting\Proline.ClassicOnline.CCoreSystem.csproj" />
+    <ProjectReference Include="..\Proline.ClassicComponents.Character\CGameLogic.csproj" />
+    <ProjectReference Include="..\Proline.ClassicComponents.Data\CDataStream.csproj" />
+    <ProjectReference Include="..\Proline.ClassicOnline.CPoolObjects\CPoolObjects.csproj" /> 
+    <ProjectReference Include="..\Proline.ClassicOnline.F8Console\CDebugActions.csproj" />
+    <ProjectReference Include="..\Proline.ClassicOnline.LWScripting\CCoreSystem.csproj" />
   </ItemGroup> 
 
 	<ItemGroup>

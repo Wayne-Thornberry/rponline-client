@@ -1,21 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
 		<TargetFramework>net452</TargetFramework>
 		<Platforms>AnyCPU</Platforms>
 		<Configurations>Debug;Release</Configurations>
 	</PropertyGroup>
-
 	<ItemGroup>
 	  <PackageReference Include="CitizenFX.Core.Client" Version="1.0.5738" />
 	</ItemGroup>
- 
 
-  <ItemGroup>
-    <ProjectReference Include="..\Proline.ClassicComponents.UI\Proline.ClassicOnline.CScreenRendering.csproj" />
-  </ItemGroup> 
-	
-	
+
+	<ItemGroup>
+    <ProjectReference Include="..\Proline.ClassicComponents.Character\CGameLogic.csproj" />
+    <ProjectReference Include="..\Proline.ClassicComponents.Data\CDataStream.csproj" /> 
+  </ItemGroup>
+
+
 	<ItemGroup>
 		<Reference Include="Microsoft.CSharp" />
 		<Reference Include="Newtonsoft.Json">
@@ -23,7 +22,7 @@
 		</Reference>
 		<Reference Include="Proline.Resource.Client">
 			<HintPath>E:\artifacts\ResourceLibs\Client\Proline.Resource.Client.dll</HintPath>
-		</Reference>
+		</Reference> 
 		<Reference Include="Proline.Resource.Configuration.Client">
 			<HintPath>E:\artifacts\ResourceLibs\Client\Proline.Resource.Configuration.Client.dll</HintPath>
 		</Reference>
