@@ -3,33 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CScriptObjs", "code\components\Proline.ClassicOnline.ScriptObjects\Proline.ClassicOnline.CScriptObjs.csproj", "{62783FDA-FDC0-4397-8D31-CD9710E46551}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CScriptObjs", "code\components\Proline.ClassicOnline.ScriptObjects\CScriptObjs.csproj", "{62783FDA-FDC0-4397-8D31-CD9710E46551}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CWorldObjects", "code\components\Proline.ClassicOnline.GasStation\Proline.ClassicOnline.CWorldObjects.csproj", "{44774768-5239-4B7E-A24A-DDE4CE77F054}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWorldObjects", "code\components\Proline.ClassicOnline.GasStation\CWorldObjects.csproj", "{44774768-5239-4B7E-A24A-DDE4CE77F054}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CDebugActions", "code\components\Proline.ClassicOnline.F8Console\Proline.ClassicOnline.CDebugActions.csproj", "{2107E76C-B426-4F70-AC68-4DC86E296889}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CDebugActions", "code\components\Proline.ClassicOnline.F8Console\CDebugActions.csproj", "{2107E76C-B426-4F70-AC68-4DC86E296889}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CGameRendering", "code\components\Proline.ClassicOnline.DebugInterface\Proline.ClassicOnline.CGameRendering.csproj", "{BE82F7C8-A659-4F4D-8F13-DF1F80F43A45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CGameRendering", "code\components\Proline.ClassicOnline.DebugInterface\CGameRendering.csproj", "{BE82F7C8-A659-4F4D-8F13-DF1F80F43A45}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CNetConnection", "code\components\Proline.ClassiclOnline.MConnection\Proline.ClassicOnline.CNetConnection.csproj", "{B49064BC-2BD7-4DC4-A900-236314BA6300}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CNetConnection", "code\components\Proline.ClassiclOnline.MConnection\CNetConnection.csproj", "{B49064BC-2BD7-4DC4-A900-236314BA6300}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CScreenRendering", "code\components\Proline.ClassicComponents.UI\Proline.ClassicOnline.CScreenRendering.csproj", "{0C682B3E-85C5-4BF2-B78B-A4A9E9B13514}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CScreenRendering", "code\components\Proline.ClassicComponents.UI\CScreenRendering.csproj", "{0C682B3E-85C5-4BF2-B78B-A4A9E9B13514}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CDataStream", "code\components\Proline.ClassicComponents.Data\Proline.ClassicOnline.CDataStream.csproj", "{D61BD4E2-7C90-4401-988D-FF7B2D365C74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CDataStream", "code\components\Proline.ClassicComponents.Data\CDataStream.csproj", "{D61BD4E2-7C90-4401-988D-FF7B2D365C74}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CGameLogic", "code\components\Proline.ClassicComponents.Character\Proline.ClassicOnline.CGameLogic.csproj", "{70E0DF2F-79D2-4303-9D6B-10818BD4AF40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CGameLogic", "code\components\Proline.ClassicComponents.Character\CGameLogic.csproj", "{70E0DF2F-79D2-4303-9D6B-10818BD4AF40}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.SClassic", "code\scripts\Proline.ClassicScripts.Classic\Proline.ClassicOnline.SClassic.csproj", "{3F35243F-4F79-43E4-B026-E4BC2376AD12}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CCoreSystem", "code\components\Proline.ClassicOnline.LWScripting\Proline.ClassicOnline.CCoreSystem.csproj", "{73B46093-DDBB-4CB7-9AAF-3F32FE7823B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCoreSystem", "code\components\Proline.ClassicOnline.LWScripting\CCoreSystem.csproj", "{73B46093-DDBB-4CB7-9AAF-3F32FE7823B9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CShopCatalogue", "code\components\Proline.ClassicOnline.MShop\Proline.ClassicOnline.CShopCatalogue.csproj", "{6010408E-DE86-4C20-AB68-69719821EE71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CShopCatalogue", "code\components\Proline.ClassicOnline.MShop\CShopCatalogue.csproj", "{6010408E-DE86-4C20-AB68-69719821EE71}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{0D229607-AAA4-4539-AEB4-CD018B8FF917}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{3392669C-6CF8-4586-841D-63D60746EE17}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CMissionManager", "code\components\Proline.ClassicOnline.MissionManager\Proline.ClassicOnline.CMissionManager.csproj", "{A55142E8-5737-46CD-B3A0-D928F8D398EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMissionManager", "code\components\Proline.ClassicOnline.MissionManager\CMissionManager.csproj", "{A55142E8-5737-46CD-B3A0-D928F8D398EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{B9BD010E-796F-4A7F-8EC9-797B86CE6604}"
 EndProject
@@ -37,17 +37,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{FFE2D76B-1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.Scaleforms", "code\libs\CFXExtended\Proline.CFXExtended.Client\Proline.ClassicOnline.Scaleforms.csproj", "{60F69FE9-BE05-4634-9F4F-93ECF7ACB942}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CNativeEvents", "code\components\Proline.ClassicOnline.CNativeEvents\Proline.ClassicOnline.CNativeEvents.csproj", "{28738EDB-1BCF-4DDF-972F-9ACFC701F1F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CNativeEvents", "code\components\Proline.ClassicOnline.CNativeEvents\CNativeEvents.csproj", "{28738EDB-1BCF-4DDF-972F-9ACFC701F1F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CPoolObjects", "code\components\Proline.ClassicOnline.CPoolObjects\Proline.ClassicOnline.CPoolObjects.csproj", "{C40C3619-8CF5-477C-8AE6-1CC8545C1A63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPoolObjects", "code\components\Proline.ClassicOnline.CPoolObjects\CPoolObjects.csproj", "{C40C3619-8CF5-477C-8AE6-1CC8545C1A63}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CAddionalEvents", "code\components\Proline.ClassicOnline.CAddionalEvents\Proline.ClassicOnline.CAddionalEvents.csproj", "{D14EA65F-D3FB-4BF1-B692-54C85FDE9AB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CAddionalEvents", "code\components\Proline.ClassicOnline.CAddionalEvents\CAddionalEvents.csproj", "{D14EA65F-D3FB-4BF1-B692-54C85FDE9AB6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.CScriptAreas", "code\components\Proline.ClassicOnline.ScriptAreas\Proline.ClassicOnline.CScriptAreas.csproj", "{4A363264-8921-464D-8080-6DDE69FFD32E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CScriptAreas", "code\components\Proline.ClassicOnline.ScriptAreas\CScriptAreas.csproj", "{4A363264-8921-464D-8080-6DDE69FFD32E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.Engine", "code\core\Proline.ClassicOnline.Core\Proline.ClassicOnline.Engine.csproj", "{3031D6BB-F39E-470F-B9AC-E4141B75A126}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPOnline", "code\core\Proline.ClassicOnline.Core\RPOnline.csproj", "{3031D6BB-F39E-470F-B9AC-E4141B75A126}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proline.ClassicOnline.EventQueue", "code\libs\Proline.ClassicOnline.EventQueue\Proline.ClassicOnline.EventQueue.csproj", "{82C1DF49-8ADF-46BE-96B4-D0C87D0B3FE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.EventQueue", "code\libs\Proline.ClassicOnline.EventQueue\Proline.ClassicOnline.EventQueue.csproj", "{82C1DF49-8ADF-46BE-96B4-D0C87D0B3FE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

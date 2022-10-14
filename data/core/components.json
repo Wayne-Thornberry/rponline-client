@@ -1,15 +1,15 @@
 [ 
-    "Proline.ClassicOnline.CCoreSystem",
-    "Proline.ClassicOnline.CNativeEvents",
-    "Proline.ClassicOnline.CPoolObjects",
-    "Proline.ClassicOnline.CDataStream",
-    "Proline.ClassicOnline.CDebugActions",
-    "Proline.ClassicOnline.CGameLogic",
-    "Proline.ClassicOnline.CGameRendering",
-    "Proline.ClassicOnline.CNetConnection",
-    "Proline.ClassicOnline.CScriptAreas",
-    "Proline.ClassicOnline.CScriptObjs",
-    "Proline.ClassicOnline.CScreenRendering",
-    "Proline.ClassicOnline.CShopCatalogue",
-    "Proline.ClassicOnline.CWorldObjects"
+    "CCoreSystem",
+    "CNativeEvents",
+    "CPoolObjects",
+    "CDataStream",
+    "CDebugActions",
+    "CGameLogic",
+    "CGameRendering",
+    "CNetConnection",
+    "CScriptAreas",
+    "CScriptObjs",
+    "CScreenRendering",
+    "CShopCatalogue",
+    "CWorldObjects"
 ]
