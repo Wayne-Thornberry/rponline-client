@@ -1,7 +1,10 @@
 ﻿using Proline.ClassicOnline.CCoreSystem.Internal;
 using Proline.ClassicOnline.CDebugActions;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using Console = Proline.Resource.Console;
 
@@ -25,7 +28,7 @@ namespace Proline.ClassicOnline.CCoreSystem
             }
         }
 
-        public bool GetEventExitsts(object scriptInstance, string eventName)
+        public bool GetEventExists(object scriptInstance, string eventName)
         {
             try
             {
@@ -62,31 +65,71 @@ namespace Proline.ClassicOnline.CCoreSystem
             {
                 var api = new CDebugActionsAPI();
                 var sm = ListOfLiveScripts.GetInstance();
-                var stl = ScriptTypeLibrary.GetInstance();
 
-                if (!stl.DoesScriptTypeExist(scriptName))
-                    return -1;
 
-                var type = stl.GetScriptType(scriptName);
-                if (type == null)
+                // Get scripting config
+                var scriptingConfig = ScriptingConfigSection.ModuleConfig;
+
+                // If we have a config, then we can load the levelscripts
+                var scriptTypes = new Dictionary<string, Type>();
+                if (scriptingConfig != null)
                 {
-                    Console.WriteLine(String.Format("Unable to create script instance of {0}, instance type does not exist", scriptName));
+                    // Load Assemblies 
+                    Console.WriteLine("Retrived config section");
+                    Console.WriteLine($"Loading level scripts. from {scriptingConfig.LevelScriptAssemblies.Count()} assemblies");
+                    foreach (var assemblyStrings in scriptingConfig.LevelScriptAssemblies)
+                    {
+                        Console.WriteLine($"Loading assembly {assemblyStrings}");
+                        var assembly = Assembly.Load(assemblyStrings.ToString());
+                        Console.WriteLine($"Scanning assembly {assemblyStrings} for scripts");
+                        var types = assembly.GetTypes().Where(e => (object)e.GetMethod("Execute") != null);
+                        Console.WriteLine($"Found {types.Count()} scripts that have an execute method");
+                        foreach (var item in types)
+                        {
+                            if (!scriptTypes.ContainsKey(item.Name))
+                                scriptTypes.Add(item.Name, item);
+                            else
+                                Console.WriteLine($"{item.Name} DUPLICATE?????");
+
+                        }
+                        Console.WriteLine($"Loading complete");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Cannot start script {0} because the config failed to load or is not set");
                     return -1;
                 }
+
+                // Get type matching script name
+                if (!scriptTypes.ContainsKey(scriptName))
+                {
+                    Console.WriteLine("Script {0} cannot be found");
+                    return -1;
+                }
+
+                // Get the script type from the dictionary that was created
+                var type = scriptTypes[scriptName];
+
                 Console.WriteLine(String.Format("Creating script instance of {0}", scriptName));
+
+                // Create an instance of that type found. There should be no constructor on these scripts
                 var instance = Activator.CreateInstance(type);
+
                 if (instance == null)
                 {
                     Console.WriteLine(String.Format("Unable to create script instance of {0}, instance came back null", scriptName));
                     return -1;
                 }
 
+                // Create a shell for the script
                 var script = new LiveScript(instance);
                 sm.Add(script);
-                script.Execute(args);
-                var scriptTask = script.ExecutionTask;
-                Console.WriteLine(String.Format("Task Id {0}, Is Complete {1}, Status {2} ", scriptTask.Id, scriptTask.IsCompleted, scriptTask.Status));
-                api.LogDebug($"Calling Task ID for API {Task.CurrentId}");
+
+                // We need to create a cacellation token that can stop the base while loop in the scripts 
+                Console.WriteLine(string.Format("{0} Script Started", scriptName));
+                script.Start();
+                Console.WriteLine(string.Format("{0} Executed Succesfully, Running", scriptName));  
                 return script.Id;
             }
             catch (Exception e)
@@ -97,9 +140,7 @@ namespace Proline.ClassicOnline.CCoreSystem
         }
 
 
-        public int GetInstanceCountOfScript(string scriptName)
-
-
+        public int GetInstanceCountOfScript(string scriptName) 
         {
             try
             {
@@ -118,8 +159,7 @@ namespace Proline.ClassicOnline.CCoreSystem
         public void MarkScriptAsNoLongerNeeded(object callingClass)
         {
             try
-            {
-
+            { 
                 var sm = ListOfLiveScripts.GetInstance();
                 var script = sm.FirstOrDefault(e => e.Instance == callingClass);
                 Console.WriteLine(String.Format("Requesting that script instances by the name of {0} be marked as no longer needed", script.Name));

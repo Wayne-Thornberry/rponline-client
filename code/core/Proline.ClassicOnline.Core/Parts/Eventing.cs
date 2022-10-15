@@ -10,10 +10,10 @@ namespace Proline.ClassicOnline.Engine.Parts
             coreAPI.TriggerScriptEvent(eventName, args);
         }
 
-        public static bool GetEventExitsts(object scriptInstance, string eventName)
+        public static bool GetEventExists(object scriptInstance, string eventName)
         {
             var coreAPI = new CCoreSystemAPI();
-            return coreAPI.GetEventExitsts(scriptInstance, eventName);
+            return coreAPI.GetEventExists(scriptInstance, eventName);
         }
 
         public static object[] GetEventData(object scriptInstance, string eventName)

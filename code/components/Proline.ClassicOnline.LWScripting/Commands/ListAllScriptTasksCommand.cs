@@ -12,8 +12,8 @@ namespace Proline.ClassicOnline.CCoreSystem.Commands
 
         protected override void OnCommandExecute(params object[] args)
         {
-            var sm = ScriptTaskManager.GetInstance();
-            foreach (var scriptTask in sm.GetAllScriptInstanceTasks())
+            var sm = TaskManager.GetInstance();
+            foreach (var scriptTask in sm.GetAllTasks())
             {
                 Console.WriteLine(string.Format("Task Id {0}, Is Complete {1}, Status {2} ", scriptTask.Id, scriptTask.IsCompleted, scriptTask.Status));
             }

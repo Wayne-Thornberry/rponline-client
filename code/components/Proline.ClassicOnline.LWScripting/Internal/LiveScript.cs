@@ -39,16 +39,7 @@ namespace Proline.ClassicOnline.CCoreSystem.Internal
             {
                 CancelToken.Cancel();
             }
-        }
-
-        internal void Execute(params object[] args)
-        {
-            _tokenSource = new CancellationTokenSource();
-            var method = InstanceType.GetMethod("Execute");
-            Console.WriteLine(string.Format("{0} Script Started", Name));
-            _executionTask = (Task)method.Invoke(_instance, new object[] { args, _tokenSource.Token });
-            Console.WriteLine(string.Format("{0} Executed Succesfully, Running", Name));
-        }
+        } 
 
         internal bool HasEvent(string eventName)
         {
@@ -74,6 +65,18 @@ namespace Proline.ClassicOnline.CCoreSystem.Internal
             if (!_eventQueue.ContainsKey(eventName))
                 _eventQueue.Add(eventName, new Queue<InvokedEvent>());
             _eventQueue[eventName].Enqueue(new InvokedEvent(eventName, args));
+        }
+
+        internal void Start(params object[] args)
+        {
+            var tokenSource = new CancellationTokenSource();
+            var method = InstanceType.GetMethod("Execute");
+            Console.WriteLine(string.Format("{0} Script Started", Name));
+            _executionTask = TaskManager.StartNew(() => {
+                method.Invoke(_instance, new object[] { args, tokenSource.Token });
+                Console.WriteLine(String.Format("Task Id {0}, Is Complete {1}, Status {2} ", _executionTask.Id, _executionTask.IsCompleted, _executionTask.Status));
+            });
+            Console.WriteLine(string.Format("{0} Executed Succesfully, Running", Name));
         }
     }
 }
