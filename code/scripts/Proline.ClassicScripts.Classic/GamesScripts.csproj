@@ -18,14 +18,15 @@
   <ItemGroup>
     <ProjectReference Include="..\..\components\Proline.ClassicComponents.Character\CGameLogic.csproj" />
     <ProjectReference Include="..\..\core\Proline.ClassicOnline.Core\RPOnline.csproj" />
-    
-    <ProjectReference Include="..\..\libs\CFXExtended\Proline.CFXExtended.Client\Proline.ClassicOnline.Scaleforms.csproj" />
   </ItemGroup>
  
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\vendor\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Proline.ClassicOnline.Scaleforms">
+      <HintPath>..\..\..\vendor\CFXExtended\Proline.ClassicOnline.Scaleforms.dll</HintPath>
     </Reference>
     <Reference Include="Proline.Resource.Client">
       <HintPath>E:\artifacts\ResourceLibs\Client\Proline.Resource.Client.dll</HintPath>
