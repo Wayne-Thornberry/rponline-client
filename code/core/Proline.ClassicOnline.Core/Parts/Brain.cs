@@ -11,6 +11,7 @@ namespace Proline.ClassicOnline.Engine.Parts
             var api = new CCScriptObjsAPI();
             return api.GetEntityHandlesByTypes(type);
         }
+
         public static Entity GetNeariestEntity(EntityType type)
         {
             var api = new CCScriptObjsAPI();

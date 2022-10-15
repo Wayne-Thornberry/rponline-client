@@ -45,8 +45,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CScriptAreas", "code\compon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPOnline", "code\core\Proline.ClassicOnline.Core\RPOnline.csproj", "{3031D6BB-F39E-470F-B9AC-E4141B75A126}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proline.ClassicOnline.EventQueue", "code\libs\Proline.ClassicOnline.EventQueue\Proline.ClassicOnline.EventQueue.csproj", "{82C1DF49-8ADF-46BE-96B4-D0C87D0B3FE1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -121,10 +119,6 @@ Global
 		{3031D6BB-F39E-470F-B9AC-E4141B75A126}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3031D6BB-F39E-470F-B9AC-E4141B75A126}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3031D6BB-F39E-470F-B9AC-E4141B75A126}.Release|Any CPU.Build.0 = Release|Any CPU
-		{82C1DF49-8ADF-46BE-96B4-D0C87D0B3FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82C1DF49-8ADF-46BE-96B4-D0C87D0B3FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82C1DF49-8ADF-46BE-96B4-D0C87D0B3FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82C1DF49-8ADF-46BE-96B4-D0C87D0B3FE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,7 +140,6 @@ Global
 		{C40C3619-8CF5-477C-8AE6-1CC8545C1A63} = {0D229607-AAA4-4539-AEB4-CD018B8FF917}
 		{D14EA65F-D3FB-4BF1-B692-54C85FDE9AB6} = {0D229607-AAA4-4539-AEB4-CD018B8FF917}
 		{4A363264-8921-464D-8080-6DDE69FFD32E} = {0D229607-AAA4-4539-AEB4-CD018B8FF917}
-		{82C1DF49-8ADF-46BE-96B4-D0C87D0B3FE1} = {FFE2D76B-12C9-4C3A-807F-0BECD46A0BA2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C2EDC16-681D-40A9-9168-7C35B4D4F23C}
