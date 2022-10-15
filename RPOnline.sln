@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CDataStream", "code\compone
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CGameLogic", "code\components\Proline.ClassicComponents.Character\CGameLogic.csproj", "{70E0DF2F-79D2-4303-9D6B-10818BD4AF40}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamesScripts", "code\scripts\Proline.ClassicScripts.Classic\GamesScripts.csproj", "{3F35243F-4F79-43E4-B026-E4BC2376AD12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LevelScripts", "code\scripts\Proline.ClassicScripts.Classic\LevelScripts.csproj", "{3F35243F-4F79-43E4-B026-E4BC2376AD12}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCoreSystem", "code\components\Proline.ClassicOnline.LWScripting\CCoreSystem.csproj", "{73B46093-DDBB-4CB7-9AAF-3F32FE7823B9}"
 EndProject

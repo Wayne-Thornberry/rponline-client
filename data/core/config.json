@@ -40,7 +40,7 @@
 	
 	"scriptingConfigSection" :{ 
         "levelScriptAssemblies" : [
-			"Proline.ClassicOnline.SClassic" 
+			"LevelScripts" 
 		]
     },
 	"moduleBrainSection" :{ 

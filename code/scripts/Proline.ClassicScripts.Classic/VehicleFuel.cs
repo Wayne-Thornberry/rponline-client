@@ -2,7 +2,7 @@ using CitizenFX.Core;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Proline.ClassicOnline.SClassic
+namespace LevelScripts
 {
     public class VehicleFuel
     {

@@ -5,7 +5,7 @@ using Proline.ClassicOnline.Engine.Parts;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Proline.ClassicOnline.SClassic.Tools
+namespace LevelScripts.Tools
 {
     public class PedComponentViewer
     {

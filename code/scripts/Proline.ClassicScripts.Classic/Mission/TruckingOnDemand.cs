@@ -4,7 +4,7 @@ using Proline.ClassicOnline.Engine.Parts;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Proline.ClassicOnline.SClassic.Mission
+namespace LevelScripts.Mission
 {
     public class TruckingOnDemand
     {

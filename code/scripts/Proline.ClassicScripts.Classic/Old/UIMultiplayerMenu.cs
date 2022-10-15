@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Proline.ClassicOnline.SClassic.Old
+namespace LevelScripts.Old
 {
     //public struct MultiplayerMenuSlot
     //{

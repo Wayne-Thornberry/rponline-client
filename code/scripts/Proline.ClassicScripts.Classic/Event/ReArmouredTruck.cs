@@ -6,7 +6,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Proline.ClassicOnline.SClassic.Event
+namespace LevelScripts.Event
 {
     public class ReArmouredTruck
     {

@@ -7,7 +7,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Proline.ClassicOnline.CCoreSystem.Scripts
+namespace LevelScripts
 {
     public class InitCore
     {

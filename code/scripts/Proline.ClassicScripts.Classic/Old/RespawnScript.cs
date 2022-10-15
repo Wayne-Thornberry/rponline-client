@@ -4,7 +4,7 @@ using Proline.ClassicOnline.Scaleforms;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Proline.ClassicOnline.SClassic.Old
+namespace LevelScripts.Old
 {
     public class RespawnScript
     {

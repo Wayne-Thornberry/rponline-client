@@ -4,7 +4,7 @@ using CitizenFX.Core.UI;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Proline.ClassicOnline.SClassic
+namespace LevelScripts
 {
     public class StartIntro
     {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Proline.ClassicOnline.SClassic.UI
+namespace LevelScripts.UI
 {
     public class UIMainMenu
     {

@@ -4,7 +4,7 @@ using Proline.ClassicOnline.Engine.Parts;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Proline.ClassicOnline.SClassic
+namespace LevelScripts
 {
     public class LoadDefaultOnline
     {
@@ -12,7 +12,7 @@ namespace Proline.ClassicOnline.SClassic
         {
             await Game.Player.ChangeModel(new Model(1885233650));
             if (!EngineAPI.HasSaveLoaded())
-            { 
+            {
                 EngineAPI.StartNewScript("LoadDefaultStats");
                 while (EngineAPI.GetInstanceCountOfScript("LoadDefaultStats") > 0)
                 {

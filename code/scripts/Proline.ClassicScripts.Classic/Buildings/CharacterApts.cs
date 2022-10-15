@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Proline.ClassicOnline.SClassic.Buildings
+namespace LevelScripts.Buildings
 {
     public class CharacterApts
     {

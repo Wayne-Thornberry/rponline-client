@@ -4,7 +4,7 @@ using Proline.ClassicOnline.Engine.Parts;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Proline.ClassicOnline.SClassic
+namespace LevelScripts
 {
     public class MoneyBagController
     {
@@ -41,7 +41,7 @@ namespace Proline.ClassicOnline.SClassic
                 {
                     var _value = (int)(EngineAPI.GetCharacterWalletBalance() - EngineAPI.GetCharacterMaxWalletBalance());
                     EngineAPI.SubtractValueFromWalletBalance(_value);
-                    var pickup = await World.CreateAmbientPickup(PickupType.MoneyDepBag, Game.PlayerPed.Position + (Game.PlayerPed.ForwardVector * 2), new Model("xm_prop_x17_bag_01b"), _value);
+                    var pickup = await World.CreateAmbientPickup(PickupType.MoneyDepBag, Game.PlayerPed.Position + Game.PlayerPed.ForwardVector * 2, new Model("xm_prop_x17_bag_01b"), _value);
                     pickup.AttachBlip();
                     pickup.IsPersistent = true;
                 }
