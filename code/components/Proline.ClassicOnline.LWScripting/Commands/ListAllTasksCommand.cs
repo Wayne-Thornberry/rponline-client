@@ -4,16 +4,15 @@ using Console = Proline.Resource.Console;
 
 namespace Proline.ClassicOnline.CCoreSystem.Commands
 {
-    public class ListAllScriptTasksCommand : ResourceCommand
+    public class ListAllTasksCommand : ResourceCommand
     {
-        public ListAllScriptTasksCommand() : base("ListAllScriptTasks")
+        public ListAllTasksCommand() : base("ListAllTasks")
         {
         }
 
         protected override void OnCommandExecute(params object[] args)
-        {
-            var sm = TaskManager.GetInstance();
-            foreach (var scriptTask in sm.GetAllTasks())
+        { 
+            foreach (var scriptTask in TaskManager.Tasks)
             {
                 Console.WriteLine(string.Format("Task Id {0}, Is Complete {1}, Status {2} ", scriptTask.Id, scriptTask.IsCompleted, scriptTask.Status));
             }

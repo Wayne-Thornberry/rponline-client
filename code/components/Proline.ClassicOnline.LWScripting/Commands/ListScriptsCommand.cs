@@ -11,9 +11,8 @@ namespace Proline.ClassicOnline.CCoreSystem.Commands
         }
 
         protected override void OnCommandExecute(params object[] args)
-        {
-            var sm = ScriptTypeLibrary.GetInstance();
-            foreach (var item in sm.Keys)
+        { 
+            foreach (var item in ScriptManager.GetScriptNames())
             {
                 Console.WriteLine(item);
             }

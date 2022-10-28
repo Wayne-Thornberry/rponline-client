@@ -12,7 +12,7 @@ namespace Proline.ClassicOnline.CCoreSystem.Commands
 
         protected override void OnCommandExecute(params object[] args)
         {
-            var sm = ListOfLiveScripts.GetInstance();
+            var sm = ScriptManager.LiveScripts;
             if (args.Count() == 0)
             {
                 foreach (var script in sm)

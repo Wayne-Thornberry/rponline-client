@@ -16,8 +16,8 @@ namespace Proline.ClassicOnline.CCoreSystem
         {
             try
             {
-                var sm = ListOfLiveScripts.GetInstance();
-                foreach (var item in sm)
+                var livescripts = ScriptManager.LiveScripts;
+                foreach (var item in livescripts)
                 {
                     item.EnqueueEvent(eventName, args);
                 }
@@ -32,8 +32,12 @@ namespace Proline.ClassicOnline.CCoreSystem
         {
             try
             {
-                var sm = ListOfLiveScripts.GetInstance();
-                var script = sm.FirstOrDefault(e => e.Instance == scriptInstance);
+                var script = ScriptManager.GetLiveScript(scriptInstance);
+
+
+                if (script == null)
+                    return false;
+
                 return script.HasEvent(eventName);
             }
             catch (Exception e)
@@ -47,8 +51,11 @@ namespace Proline.ClassicOnline.CCoreSystem
         {
             try
             {
-                var sm = ListOfLiveScripts.GetInstance();
-                var script = sm.FirstOrDefault(e => e.Instance == scriptInstance);
+                var script = ScriptManager.GetLiveScript(scriptInstance);
+
+                if (script == null)
+                    return new object[0];
+
                 return script.DequeueEvent(eventName);
             }
             catch (Exception e)
@@ -59,47 +66,20 @@ namespace Proline.ClassicOnline.CCoreSystem
         }
 
         public int StartNewScript(string scriptName, params object[] args)
-        {
-
+        { 
             try
             {
-                var api = new CDebugActionsAPI();
-                var sm = ListOfLiveScripts.GetInstance();
+                // Before we start a new script, attempt to clean up old scripts that are finished  
+                // This is the only way we have to cleanup old scripts that have started and finished previously
+                ScriptManager.TerminateMarkedAsNoLongerNeedeScripts();
 
+                var api = new CDebugActionsAPI();  
 
                 // Get scripting config
                 var scriptingConfig = ScriptingConfigSection.ModuleConfig;
 
                 // If we have a config, then we can load the levelscripts
-                var scriptTypes = new Dictionary<string, Type>();
-                if (scriptingConfig != null)
-                {
-                    // Load Assemblies 
-                    Console.WriteLine("Retrived config section");
-                    Console.WriteLine($"Loading level scripts. from {scriptingConfig.LevelScriptAssemblies.Count()} assemblies");
-                    foreach (var assemblyStrings in scriptingConfig.LevelScriptAssemblies)
-                    {
-                        Console.WriteLine($"Loading assembly {assemblyStrings}");
-                        var assembly = Assembly.Load(assemblyStrings.ToString());
-                        Console.WriteLine($"Scanning assembly {assemblyStrings} for scripts");
-                        var types = assembly.GetTypes().Where(e => (object)e.GetMethod("Execute") != null);
-                        Console.WriteLine($"Found {types.Count()} scripts that have an execute method");
-                        foreach (var item in types)
-                        {
-                            if (!scriptTypes.ContainsKey(item.Name))
-                                scriptTypes.Add(item.Name, item);
-                            else
-                                Console.WriteLine($"{item.Name} DUPLICATE?????");
-
-                        }
-                        Console.WriteLine($"Loading complete");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Cannot start script {0} because the config failed to load or is not set");
-                    return -1;
-                }
+                var scriptTypes = ScriptManager.GetAllScriptTypes();
 
                 // Get type matching script name
                 if (!scriptTypes.ContainsKey(scriptName))
@@ -123,14 +103,9 @@ namespace Proline.ClassicOnline.CCoreSystem
                 }
 
                 // Create a shell for the script
-                var script = new LiveScript(instance);
-                sm.Add(script);
-
-                // We need to create a cacellation token that can stop the base while loop in the scripts 
-                Console.WriteLine(string.Format("{0} Script Started", scriptName));
-                script.Start();
-                Console.WriteLine(string.Format("{0} Executed Succesfully, Running", scriptName));  
-                return script.Id;
+                var id = LiveScript.StartNew(instance);
+                 
+                return id;
             }
             catch (Exception e)
             {
@@ -144,8 +119,9 @@ namespace Proline.ClassicOnline.CCoreSystem
         {
             try
             {
-                var sm = ListOfLiveScripts.GetInstance();
-                var count = sm.Where(e => e.Name.Equals(scriptName)).Count();
+                var livescripts = ScriptManager.LiveScripts;
+                var count = livescripts.Where(e => e.Name.Equals(scriptName)).Count();
+
                 //  Console.WriteLine(String.Format("Getting the instance count of script {0} count: {1}", scriptName, count));
                 return count;
             }
@@ -159,9 +135,9 @@ namespace Proline.ClassicOnline.CCoreSystem
         public void MarkScriptAsNoLongerNeeded(object callingClass)
         {
             try
-            { 
-                var sm = ListOfLiveScripts.GetInstance();
-                var script = sm.FirstOrDefault(e => e.Instance == callingClass);
+            {
+                var livescripts = ScriptManager.LiveScripts;
+                var script = livescripts.FirstOrDefault(e => e.Instance == callingClass);
                 Console.WriteLine(String.Format("Requesting that script instances by the name of {0} be marked as no longer needed", script.Name));
                 script.IsMarkedForNolongerNeeded = true;
             }
@@ -175,10 +151,10 @@ namespace Proline.ClassicOnline.CCoreSystem
         {
             try
             {
-                var sm = ListOfLiveScripts.GetInstance();
+                var livescripts = ScriptManager.LiveScripts;
                 var cls = scriptName;
                 Console.WriteLine(String.Format("Requesting that all script instances by the name of {0} be marked as no longer needed", scriptName));
-                var scripts = sm.Where(e => e.Name.Equals(scriptName));
+                var scripts = livescripts.Where(e => e.Name.Equals(scriptName));
                 foreach (var item in scripts)
                 {
                     item.IsMarkedForNolongerNeeded = true;
@@ -198,8 +174,8 @@ namespace Proline.ClassicOnline.CCoreSystem
         {
             try
             {
-                var sm = ListOfLiveScripts.GetInstance();
-                var scripts = sm.Where(e => e.Name.Equals(scriptName));
+                var livescripts = ScriptManager.LiveScripts;
+                var scripts = livescripts.Where(e => e.Name.Equals(scriptName));
                 Console.WriteLine(String.Format("Requesting that all script instances by the name of {0} be terminated", scriptName));
                 foreach (var script in scripts)
                 {
@@ -220,8 +196,8 @@ namespace Proline.ClassicOnline.CCoreSystem
         {
             try
             {
-                var sm = ListOfLiveScripts.GetInstance();
-                var script = sm.FirstOrDefault(e => e.Instance == scriptInstance);
+                var livescripts = ScriptManager.LiveScripts;
+                var script = livescripts.FirstOrDefault(e => e.Instance == scriptInstance);
                 if (script == null)
                     return;
                 Console.WriteLine(String.Format("Requesting that a specific script instances by the name of {0} be terminated", script.Name));
@@ -241,8 +217,8 @@ namespace Proline.ClassicOnline.CCoreSystem
         {
             try
             {
-                var sm = ListOfLiveScripts.GetInstance();
-                var script = sm.FirstOrDefault(e => e.ExecutionTask.Id == taskId);
+                var livescripts = ScriptManager.LiveScripts;
+                var script = livescripts.FirstOrDefault(e => e.ExecutionTask.Id == taskId);
                 if (script == null)
                     return;
                 Console.WriteLine(String.Format("Requesting that a specific script instances by the name of {0} be terminated", script.Name));

@@ -1,5 +1,4 @@
 ﻿using CitizenFX.Core;
-using Proline.ClassicOnline.CCoreSystem.Tasks;
 using Proline.ClassicOnline.EventQueue;
 using System;
 using System.Collections.Generic;
@@ -10,29 +9,28 @@ namespace Proline.ClassicOnline.CCoreSystem.Internal
 {
 
     internal class TaskManager
-    {
-        private static TaskManager _instance;
-        private static List<Task> _runningTasks; 
-        private static bool _enableProcessing;
-
-        public static TaskManager GetInstance()
+    { 
+        private static List<Task> _runningTasks;
+        public static List<Task> Tasks
         {
-            if (_instance == null)
-                _instance = new TaskManager();
-            return _instance;
+            get
+            {
+                if (_runningTasks == null)
+                    _runningTasks = new List<Task>();
+                return _runningTasks;
+            }
         }
 
         internal IEnumerable<Task> GetAllTasks()
-        {
-            var sm = ListOfLiveScripts.GetInstance();
-            return sm.Select(e => e.ExecutionTask);
+        { 
+            return Tasks;
         }
 
         internal static Task StartNew(Func<Task> taskFunc)
         {
             UpdateTaskList();
             var task = Task.Factory.StartNew(taskFunc);
-            _runningTasks.Add(task);
+            Tasks.Add(task);
             return task;
         }
 
@@ -40,50 +38,21 @@ namespace Proline.ClassicOnline.CCoreSystem.Internal
         {
             UpdateTaskList();
             var task = Task.Factory.StartNew(taskFunc);
-            _runningTasks.Add(task);
+            Tasks.Add(task);
             return task;
         }
 
         private static void UpdateTaskList()
         {
-            var tasks = _runningTasks.ToArray();
+            var tasks = Tasks.ToArray();
             var count = 0;
             foreach (var task in tasks)
             {
                 if (task.Status == TaskStatus.RanToCompletion || task.Status == TaskStatus.WaitingForActivation)
                 {
-                    _runningTasks.Remove(task);
+                    Tasks.Remove(task);
                     count++;
                 }
-            }
-        }
-
-        internal static void Enable()
-        {
-            if (!_enableProcessing)
-            { 
-                _enableProcessing = true;
-                StartNew(GetInstance().TaskProcesser);
-            }
-        }
-
-        internal static void Disable()
-        {
-            if (_enableProcessing)
-            { 
-                _enableProcessing = false; 
-            }
-        }
-
-        private async Task TaskProcesser()
-        {
-            var gc = new GarbageCleaner();
-            var _eventProcessor = new ComponentEventProcessor();
-            while (_enableProcessing)
-            {
-                await _eventProcessor.ProcessQueue();
-                await gc.Execute();
-                await BaseScript.Delay(1000);
             }
         }
     }

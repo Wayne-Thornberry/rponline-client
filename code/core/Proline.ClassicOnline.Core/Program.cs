@@ -23,7 +23,6 @@ namespace Proline.ClassicOnline.Engine
 
                 Component.InitializeComponents();
 
-                EngineAPI.StartNewScript("Main");
             }
             catch (Exception e)
             {

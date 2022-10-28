@@ -47,10 +47,13 @@ namespace LevelScripts
                             API.SetNoLoadingScreen(true);
                             API.DoScreenFadeIn(500);
 
-                            EngineAPI.StartNewScript("UIMainMenu");
-                            while (EngineAPI.GetInstanceCountOfScript("UIMainMenu") > 0)
-                            {
-                                await BaseScript.Delay(1);
+                            if(EngineAPI.GetInstanceCountOfScript("UIMainMenu") == 0)
+                            { 
+                                EngineAPI.StartNewScript("UIMainMenu");
+                                while (EngineAPI.GetInstanceCountOfScript("UIMainMenu") > 0)
+                                {
+                                    await BaseScript.Delay(0);
+                                }
                             }
 
                             if (EngineAPI.GetInstanceCountOfScript("CharacterCreator") > 0)
@@ -62,7 +65,7 @@ namespace LevelScripts
                             {
                                 while (EngineAPI.GetInstanceCountOfScript("PlayerLoading") > 0)
                                 {
-                                    await BaseScript.Delay(1);
+                                    await BaseScript.Delay(0);
                                 }
                                 API.FreezeEntityPosition(Game.PlayerPed.Handle, false);
                                 API.SwitchInPlayer(Game.PlayerPed.Handle);

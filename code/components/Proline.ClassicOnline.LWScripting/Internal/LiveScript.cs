@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CitizenFX.Core;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,8 +21,6 @@ namespace Proline.ClassicOnline.CCoreSystem.Internal
         private Dictionary<string, Queue<InvokedEvent>> _eventQueue;
         private Task _executionTask;
 
-
-
         private CancellationTokenSource _tokenSource;
         private object _instance;
         private string _instanceId;
@@ -34,10 +33,18 @@ namespace Proline.ClassicOnline.CCoreSystem.Internal
         }
 
         internal void Terminate()
-        {
+        { 
             if (!IsCompleted)
             {
                 CancelToken.Cancel();
+                TaskManager.StartNew(async () =>
+                { 
+                    Console.WriteLine(string.Format("Attempting to stop script {0} because it was marked as no longer needed", Name));
+                    while (!_executionTask.IsCompleted)
+                        await BaseScript.Delay(0);
+                    // Cleanup the stuff that the script took ownership off
+                    Console.WriteLine(string.Format("all script tasks {0} have been terminated", Name));
+                });
             }
         } 
 
@@ -72,11 +79,24 @@ namespace Proline.ClassicOnline.CCoreSystem.Internal
             var tokenSource = new CancellationTokenSource();
             var method = InstanceType.GetMethod("Execute");
             Console.WriteLine(string.Format("{0} Script Started", Name));
-            _executionTask = TaskManager.StartNew(() => {
-                method.Invoke(_instance, new object[] { args, tokenSource.Token });
-                Console.WriteLine(String.Format("Task Id {0}, Is Complete {1}, Status {2} ", _executionTask.Id, _executionTask.IsCompleted, _executionTask.Status));
+            ScriptManager.ManageScript(this);
+            _executionTask = TaskManager.StartNew(async () => {
+                var task = (Task) method.Invoke(_instance, new object[] { args, tokenSource.Token });
+                while (!task.IsCompleted)
+                    await BaseScript.Delay(0);
+                Console.WriteLine(String.Format("Task Id {0}, Is Complete {1}, Status {2} ", task.Id, task.IsCompleted, task.Status));
+                ScriptManager.UnmanageScript(this);
             });
             Console.WriteLine(string.Format("{0} Executed Succesfully, Running", Name));
+        }
+
+        internal static int StartNew(object instance)
+        {
+            var script = new LiveScript(instance);
+            // We need to create a cacellation token that can stop the base while loop in the scripts  
+            script.Start();
+
+            return script.Id;
         }
     }
 }

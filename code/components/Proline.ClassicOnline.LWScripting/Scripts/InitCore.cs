@@ -1,7 +1,6 @@
 ﻿using CitizenFX.Core;
 using Proline.ClassicOnline.CCoreSystem.Events;
 using Proline.ClassicOnline.CCoreSystem.Internal;
-using Proline.ClassicOnline.CCoreSystem.Tasks;
 using Proline.ClassicOnline.EventQueue;
 using System;
 using System.Linq;
@@ -18,7 +17,17 @@ namespace LevelScripts
              
             ComponentEvent.RegisterEvent(typeof(CTestEventRandomInput));
 
-            TaskManager.Enable(); 
+            TaskManager.StartNew(async () =>
+            {
+                var eventProcessor = new ComponentEventProcessor();
+                while (true)
+                {
+                    //ScriptManager.CleanUpCompletedScripts();
+                    await eventProcessor.ProcessQueue();
+                    await BaseScript.Delay(1000);
+                }
+            });
+
 
         }
     }

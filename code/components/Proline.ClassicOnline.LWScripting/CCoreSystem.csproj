@@ -48,4 +48,9 @@
     <ProjectReference Include="..\Proline.ClassicOnline.F8Console\CDebugActions.csproj" />
   </ItemGroup>
 
+
+	<ItemGroup>
+	  <Folder Include="Tasks\" />
+	</ItemGroup>
+
 </Project>

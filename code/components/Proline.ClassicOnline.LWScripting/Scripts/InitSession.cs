@@ -9,6 +9,8 @@ namespace Proline.ClassicOnline.CCoreSystem.Scripts
         {
             ComponentEvent.InvokeEvent("CTestEventRandomInput");
             ComponentEvent.InvokeEvent("CPublicTestEventRandomInput");
+            var api = new CCoreSystemAPI();
+            api.StartNewScript("Main");
         }
     }
 }
