@@ -8,27 +8,39 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="libs\**" />
+	  <Compile Remove="Scripts\Old\**" />
+	  <EmbeddedResource Remove="libs\**" />
+	  <EmbeddedResource Remove="Scripts\Old\**" />
+	  <None Remove="libs\**" />
+	  <None Remove="Scripts\Old\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Scripts\UI\UIMenuController.cs" />
 	  <Compile Remove="UI\UIMenuController.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="CitizenFX.Core.Client" Version="1.0.5738" />
 	</ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\core\Proline.ClassicOnline.Core\RPOnline.csproj" />
-  </ItemGroup>
  
   <ItemGroup>
     <Reference Include="CGameLogic">
-      <HintPath>..\..\..\vendor\OnlineEngine\CGameLogic.dll</HintPath>
+      <HintPath>..\vendor\OnlineEngine\CGameLogic.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\vendor\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\vendor\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Proline.ClassicOnline.EventQueue">
+      <HintPath>..\vendor\Components\Proline.ClassicOnline.EventQueue.dll</HintPath>
     </Reference>
     <Reference Include="Proline.ClassicOnline.Scaleforms">
-      <HintPath>..\..\..\vendor\CFXExtended\Proline.ClassicOnline.Scaleforms.dll</HintPath>
+      <HintPath>..\vendor\CFXExtended\Proline.ClassicOnline.Scaleforms.dll</HintPath>
+    </Reference>
+    <Reference Include="Proline.OnlineEngine.Core">
+      <HintPath>..\vendor\OnlineEngine\Proline.OnlineEngine.Core.dll</HintPath>
     </Reference>
     <Reference Include="Proline.Resource.Client">
       <HintPath>E:\artifacts\ResourceLibs\Client\Proline.Resource.Client.dll</HintPath>

@@ -1,14 +1,11 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using CitizenFX.Core;
-using Proline.ClassicOnline.CCoreSystem; 
 using CitizenFX.Core.Native;
 using System.Collections.Generic;
 using CitizenFX.Core.UI;
 using System.Linq;
 using System;
-using Proline.ClassicOnline.SClassic.UI.Menu;
-using Proline.ClassicOnline.CScreenRendering;
 
 namespace Proline.ClassicOnline.SClassic.UI
 {
