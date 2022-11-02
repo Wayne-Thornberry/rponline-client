@@ -1,6 +1,6 @@
 ﻿
-using CGameLogic;
 using Proline.ClassicOnline.Engine.Parts;
+using Proline.OnlineEngine.Core;
 using System.Threading;
 using System.Threading.Tasks;
 

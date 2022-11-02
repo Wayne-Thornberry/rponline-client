@@ -1,4 +1,4 @@
-﻿using CGameLogic.Data;
+﻿
 using CitizenFX.Core;
 using CitizenFX.Core.UI;
 
@@ -34,7 +34,7 @@ namespace LevelScripts.Mission
             EngineAPI.TrackPoolObjectForMission(_policeVehicle);
 
 
-            var handles = EngineAPI.GetEntityHandlesByTypes(EntityType.VEHICLE);
+            var handles = EngineAPI.GetEntityHandlesByTypes(1);
 
             foreach (var item in handles)
             {

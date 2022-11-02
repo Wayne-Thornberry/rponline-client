@@ -1,11 +1,8 @@
-﻿using CGameLogic;
-using CGameLogic.Data;
-using CitizenFX.Core;
+﻿using CitizenFX.Core;
 using CitizenFX.Core.Native;
-using Newtonsoft.Json;
-
-
+using Newtonsoft.Json; 
 using Proline.ClassicOnline.Engine.Parts;
+using Proline.OnlineEngine.Core;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,15 +15,15 @@ namespace LevelScripts
             var stat = MPStat.GetStat<long>("MP0_WALLET_BALANCE");
             var stat2 = MPStat.GetStat<long>("BANK_BALANCE");
 
-            var list = new OutfitComponent[12];
-            for (int i = 0; i < list.Length; i++)
-            {
-                var component = list[i];
-                component.ComponentIndex = API.GetPedDrawableVariation(Game.PlayerPed.Handle, i);
-                component.ComponentPallet = API.GetPedPaletteVariation(Game.PlayerPed.Handle, i);
-                component.ComponentTexture = API.GetPedTextureVariation(Game.PlayerPed.Handle, i);
+            //var list = new OutfitComponent[12];
+            //for (int i = 0; i < list.Length; i++)
+            //{
+            //    var component = list[i];
+            //    component.ComponentIndex = API.GetPedDrawableVariation(Game.PlayerPed.Handle, i);
+            //    component.ComponentPallet = API.GetPedPaletteVariation(Game.PlayerPed.Handle, i);
+            //    component.ComponentTexture = API.GetPedTextureVariation(Game.PlayerPed.Handle, i);
 
-            }
+            //}
 
             var id = "PlayerInfo";
             if (!EngineAPI.DoesDataFileExist(id))
@@ -59,13 +56,13 @@ namespace LevelScripts
             id = "PlayerOutfit";
             if (!EngineAPI.DoesDataFileExist(id))
             {
-                EngineAPI.CreateDataFile();
-                var outfit = new CharacterOutfit();
-                outfit.Components = list;
-                var json = JsonConvert.SerializeObject(outfit);
-                EngineAPI.AddDataFileValue("CharacterOutfit", json);
-                EngineAPI.SaveDataFile(id);
-                EngineAPI.LogDebug(id + " Created and saved");
+                //EngineAPI.CreateDataFile();
+                //var outfit = new CharacterOutfit();
+                //outfit.Components = list;
+                //var json = JsonConvert.SerializeObject(outfit);
+                //EngineAPI.AddDataFileValue("CharacterOutfit", json);
+                //EngineAPI.SaveDataFile(id);
+                //EngineAPI.LogDebug(id + " Created and saved");
             }
 
             id = "PlayerStats";

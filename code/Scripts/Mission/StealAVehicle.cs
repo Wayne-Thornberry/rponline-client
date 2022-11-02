@@ -1,5 +1,4 @@
-﻿using CGameLogic.Data;
-using CitizenFX.Core;
+﻿using CitizenFX.Core;
 using CitizenFX.Core.UI;
 
 using Proline.ClassicOnline.Engine.Parts;
@@ -24,7 +23,7 @@ namespace LevelScripts.Mission
             _closestDistance = 99999.0f;
             _payout = 1000;
 
-            var handles = EngineAPI.GetEntityHandlesByTypes(EntityType.VEHICLE);
+            var handles = EngineAPI.GetEntityHandlesByTypes(1);
 
             foreach (var item in handles)
             {

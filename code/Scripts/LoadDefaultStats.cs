@@ -1,5 +1,5 @@
 ﻿
-using CGameLogic;
+using Proline.OnlineEngine.Core;
 using System.Threading;
 using System.Threading.Tasks;
 

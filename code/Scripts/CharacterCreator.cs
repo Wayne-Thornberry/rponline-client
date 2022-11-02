@@ -108,14 +108,14 @@ namespace LevelScripts
             var id = "CharacterLooks";
             if (!EngineAPI.DoesDataFileExist(id))
             {
-                var pedLooks = EngineAPI.GetPedLooks(Game.PlayerPed.Handle);
-                EngineAPI.CreateDataFile();
-                EngineAPI.AddDataFileValue("Mother", pedLooks.Mother);
-                EngineAPI.AddDataFileValue("Father", pedLooks.Father);
-                EngineAPI.AddDataFileValue("Resemblance", pedLooks.Resemblence);
-                EngineAPI.AddDataFileValue("SkinTone", pedLooks.SkinTone);
-                EngineAPI.SaveDataFile(id);
-                EngineAPI.LogDebug(id + " Created and saved");
+                //var pedLooks = EngineAPI.GetPedLooks(Game.PlayerPed.Handle);
+                //EngineAPI.CreateDataFile();
+                //EngineAPI.AddDataFileValue("Mother", pedLooks.Mother);
+                //EngineAPI.AddDataFileValue("Father", pedLooks.Father);
+                //EngineAPI.AddDataFileValue("Resemblance", pedLooks.Resemblence);
+                //EngineAPI.AddDataFileValue("SkinTone", pedLooks.SkinTone);
+                //EngineAPI.SaveDataFile(id);
+                //EngineAPI.LogDebug(id + " Created and saved");
             }
 
             ScriptStage = -1;

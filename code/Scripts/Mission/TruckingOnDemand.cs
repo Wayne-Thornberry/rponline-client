@@ -1,4 +1,4 @@
-﻿using CGameLogic.Data;
+﻿
 using CitizenFX.Core;
 
 using Proline.ClassicOnline.Engine.Parts;
@@ -33,7 +33,7 @@ namespace LevelScripts.Mission
             _truck = (Vehicle)Entity.FromHandle(int.Parse(args[0].ToString()));
 
 
-            var handles = EngineAPI.GetEntityHandlesByTypes(EntityType.VEHICLE);
+            var handles = EngineAPI.GetEntityHandlesByTypes(2);
 
             foreach (var item in handles)
             {

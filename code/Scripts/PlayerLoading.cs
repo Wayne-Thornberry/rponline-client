@@ -1,4 +1,4 @@
-﻿using CGameLogic.Data;
+﻿
 using CitizenFX.Core;
 using CitizenFX.Core.Native;
 
@@ -79,15 +79,15 @@ namespace LevelScripts
 
                     if (EngineAPI.DoesDataFileExist("PlayerOutfit"))
                     {
-                        EngineAPI.SelectDataFile("PlayerOutfit");
-                        var outfit = EngineAPI.GetDataFileValue<CharacterOutfit>("CharacterOutfit");
-                        var components = outfit.Components;
-                        for (int i = 0; i < components.Length; i++)
-                        {
-                            var component = components[i];
-                            API.SetPedComponentVariation(Game.PlayerPed.Handle, i, component.ComponentIndex, component.ComponentTexture, component.ComponentPallet);
+                        //EngineAPI.SelectDataFile("PlayerOutfit");
+                        //var outfit = EngineAPI.GetDataFileValue<CharacterOutfit>("CharacterOutfit");
+                        //var components = outfit.Components;
+                        //for (int i = 0; i < components.Length; i++)
+                        //{
+                        //    var component = components[i];
+                        //    API.SetPedComponentVariation(Game.PlayerPed.Handle, i, component.ComponentIndex, component.ComponentTexture, component.ComponentPallet);
 
-                        }
+                        //}
                     }
                     else
                     {

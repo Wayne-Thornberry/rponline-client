@@ -1,8 +1,9 @@
-﻿using CGameLogic;
+﻿
 using CitizenFX.Core;
 using CitizenFX.Core.UI;
 
 using Proline.ClassicOnline.Engine.Parts;
+using Proline.OnlineEngine.Core;
 using System.Threading;
 using System.Threading.Tasks;
 
