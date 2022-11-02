@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Console = Proline.Resource.Console;
 
-namespace Proline.ClassicOnline.Engine
+namespace RPOnline.Game
 {
     public class Program
     {
