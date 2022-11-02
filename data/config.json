@@ -14,7 +14,6 @@
         "Proline.Resource.Framework.Client",
         "Proline.Resource.Logging.Client",
         "Proline.Resource.Globals.Client", 
-        "Proline.CFXExtended.Core"
     ], 
 
     "LoggingConfiguration": {
@@ -23,24 +22,24 @@
 
     "moduleConfigSection" : {
         "moduleCollection" :[
-			{"Name" : "CCoreSystem", "Assembly" : "Proline.ClassicOnline.CCoreSystem"},
-			{"Name" : "CNativeEvents", "Assembly" : "Proline.ClassicOnline.CNativeEvents"},
-			{"Name" : "CPoolObjects", "Assembly" : "Proline.ClassicOnline.CPoolObjects"},
-			{"Name" : "CScriptBrain", "Assembly" : "Proline.ClassicOnline.CScriptBrain"},
-			{"Name" : "CDataStream", "Assembly" : "Proline.ClassicOnline.CDataStream"},
-			{"Name" : "CNetConnection", "Assembly" : "Proline.ClassicOnline.CNetConnection"},
-			{"Name" : "CDebugActions", "Assembly" : "Proline.ClassicOnline.CDebugActions"},
-			{"Name" : "CGameRendering", "Assembly" : "Proline.ClassicOnline.CGameRendering"},
-			{"Name" : "CScreenRendering", "Assembly" : "Proline.ClassicOnline.CScreenRendering"},
-			{"Name" : "CShopCatalogue", "Assembly" : "Proline.ClassicOnline.CShopCatalogue"},
-			{"Name" : "CGameLogic", "Assembly" : "Proline.ClassicOnline.CGameLogic"},
-			{"Name" : "CWorldObjects", "Assembly" : "Proline.ClassicOnline.CWorldObjects"}
+			{"Name" : "CCoreSystem", "Assembly" : "CCoreSystem"},
+			{"Name" : "CNativeEvents", "Assembly" : "CNativeEvents"},
+			{"Name" : "CPoolObjects", "Assembly" : "CPoolObjects"},
+			{"Name" : "CScriptBrain", "Assembly" : "CScriptBrain"},
+			{"Name" : "CDataStream", "Assembly" : "CDataStream"},
+			{"Name" : "CNetConnection", "Assembly" : "CNetConnection"},
+			{"Name" : "CDebugActions", "Assembly" : "CDebugActions"},
+			{"Name" : "CGameRendering", "Assembly" : "CGameRendering"},
+			{"Name" : "CScreenRendering", "Assembly" : "CScreenRendering"},
+			{"Name" : "CShopCatalogue", "Assembly" : "CShopCatalogue"},
+			{"Name" : "CGameLogic", "Assembly" : "CGameLogic"},
+			{"Name" : "CWorldObjects", "Assembly" : "CWorldObjects"}
         ]
     },
 	
 	"scriptingConfigSection" :{ 
         "levelScriptAssemblies" : [
-			"LevelScripts" 
+			"RPOnline-Game" 
 		]
     },
 	"moduleBrainSection" :{ 
