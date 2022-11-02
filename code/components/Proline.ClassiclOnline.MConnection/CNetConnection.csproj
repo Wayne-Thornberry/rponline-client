@@ -12,8 +12,6 @@
 		<Reference Include="Newtonsoft.Json">
 			<HintPath>..\..\..\vendor\Newtonsoft.Json.dll</HintPath>
 		</Reference>
-		<ProjectReference Include="..\Proline.ClassicComponents.Character\CGameLogic.csproj" />
-		<ProjectReference Include="..\Proline.ClassicComponents.Data\CDataStream.csproj" />
 		<ProjectReference Include="..\Proline.ClassicOnline.GasStation\CWorldObjects.csproj" /> 
 		<Reference Include="Proline.Resource.Client">
 			<HintPath>E:\artifacts\ResourceLibs\Client\Proline.Resource.Client.dll</HintPath>

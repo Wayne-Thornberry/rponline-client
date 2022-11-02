@@ -16,11 +16,13 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\components\Proline.ClassicComponents.Character\CGameLogic.csproj" />
     <ProjectReference Include="..\..\core\Proline.ClassicOnline.Core\RPOnline.csproj" />
   </ItemGroup>
  
   <ItemGroup>
+    <Reference Include="CGameLogic">
+      <HintPath>..\..\..\vendor\OnlineEngine\CGameLogic.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\vendor\Newtonsoft.Json.dll</HintPath>

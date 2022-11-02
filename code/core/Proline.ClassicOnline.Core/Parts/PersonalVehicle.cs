@@ -1,5 +1,5 @@
-﻿using CitizenFX.Core;
-using Proline.ClassicOnline.CGameLogic;
+﻿using CGameLogic;
+using CitizenFX.Core; 
 
 namespace Proline.ClassicOnline.Engine.Parts
 {

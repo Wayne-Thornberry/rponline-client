@@ -1,9 +1,16 @@
-﻿using Proline.ClassicOnline.CCoreSystem;
+﻿using CCoreSystem;
+using System.Threading.Tasks;
 
 namespace Proline.ClassicOnline.Engine.Parts
 {
     public static partial class EngineAPI
     {
+        public static async Task Delay(int ms)
+        {
+            var coreAPI = new CCoreSystemAPI();
+            await coreAPI.Delay(ms);
+        }
+
         public static int StartNewScript(string scriptName, params object[] args)
         {
             var coreAPI = new CCoreSystemAPI();

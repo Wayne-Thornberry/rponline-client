@@ -1,4 +1,4 @@
-﻿using Proline.ClassicOnline.CDataStream;
+﻿using CDataStream;
 
 namespace Proline.ClassicOnline.Engine.Parts
 {

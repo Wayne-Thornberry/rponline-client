@@ -1,5 +1,4 @@
-﻿using Proline.ClassicOnline.CDebugActions;
-using Proline.ClassicOnline.CGameLogic.Data;
+﻿using CDebugActions;
 using System;
 
 namespace Proline.ClassicOnline.Engine.Parts

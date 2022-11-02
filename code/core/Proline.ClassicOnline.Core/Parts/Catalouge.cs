@@ -1,4 +1,5 @@
-﻿using Proline.ClassicOnline.CShopCatalogue;
+﻿
+using CShopCatalogue;
 
 namespace Proline.ClassicOnline.Engine.Parts
 {

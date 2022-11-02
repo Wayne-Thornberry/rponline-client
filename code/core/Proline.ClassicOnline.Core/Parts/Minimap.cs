@@ -1,5 +1,5 @@
 ﻿using CitizenFX.Core;
-using Proline.ClassicOnline.CScreenRendering;
+using CScreenRendering;
 using System.Threading.Tasks;
 
 namespace Proline.ClassicOnline.Engine.Parts

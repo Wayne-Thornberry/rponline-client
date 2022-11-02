@@ -1,8 +1,7 @@
 using CitizenFX.Core;
 using CitizenFX.Core.Native;
 using CitizenFX.Core.UI;
-using Newtonsoft.Json;
-using Proline.ClassicOnline.CGameLogic.Data;
+using Newtonsoft.Json; 
 using Proline.ClassicOnline.Engine.Parts;
 using System.Threading;
 using System.Threading.Tasks;

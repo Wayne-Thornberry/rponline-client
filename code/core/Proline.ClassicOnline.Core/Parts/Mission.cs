@@ -1,5 +1,5 @@
 ﻿using CitizenFX.Core;
-using Proline.ClassicOnline.CMissionManager;
+using CMissionManager;
 
 namespace Proline.ClassicOnline.Engine.Parts
 {

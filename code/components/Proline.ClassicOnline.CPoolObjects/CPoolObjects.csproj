@@ -13,7 +13,6 @@
 		<Reference Include="Newtonsoft.Json">
 			<HintPath>..\..\..\vendor\Newtonsoft.Json.dll</HintPath>
 		</Reference>
-		<ProjectReference Include="..\Proline.ClassicOnline.F8Console\CDebugActions.csproj" />
 		<Reference Include="Proline.ClassicOnline.EventQueue">
 		  <HintPath>..\..\..\vendor\Components\Proline.ClassicOnline.EventQueue.dll</HintPath>
 		</Reference>

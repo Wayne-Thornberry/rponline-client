@@ -10,12 +10,6 @@
 
 
 	<ItemGroup>
-    <ProjectReference Include="..\Proline.ClassicComponents.Character\CGameLogic.csproj" />
-    <ProjectReference Include="..\Proline.ClassicComponents.Data\CDataStream.csproj" /> 
-  </ItemGroup>
-
-
-	<ItemGroup>
 		<Reference Include="Microsoft.CSharp" />
 		<Reference Include="Newtonsoft.Json">
 			<HintPath>..\..\..\vendor\Newtonsoft.Json.dll</HintPath>

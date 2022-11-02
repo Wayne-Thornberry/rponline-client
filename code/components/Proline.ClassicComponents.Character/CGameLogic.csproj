@@ -9,11 +9,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-    <ProjectReference Include="..\Proline.ClassicComponents.Data\CDataStream.csproj" />
-    <ProjectReference Include="..\Proline.ClassicOnline.F8Console\CDebugActions.csproj" />
-  </ItemGroup>
-
-	<ItemGroup>
 		<Reference Include="Microsoft.CSharp" />
 		<Reference Include="Newtonsoft.Json">
 			<HintPath>..\..\..\vendor\Newtonsoft.Json.dll</HintPath>

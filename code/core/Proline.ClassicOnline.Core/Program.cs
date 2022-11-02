@@ -16,13 +16,8 @@ namespace Proline.ClassicOnline.Engine
             Console.WriteLine($"Started ClassicOnline"); 
 
             try
-            {
-                // Data system
-
-                // Event Systems
-
-                Component.InitializeComponents();
-
+            { 
+                Component.InitializeComponents(); 
             }
             catch (Exception e)
             {

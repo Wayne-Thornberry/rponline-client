@@ -8,15 +8,7 @@
 
 	<ItemGroup>
 	  <PackageReference Include="CitizenFX.Core.Client" Version="1.0.5738" />
-	</ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Proline.ClassicComponents.Character\CGameLogic.csproj" />
-    <ProjectReference Include="..\Proline.ClassicComponents.Data\CDataStream.csproj" />
-    <ProjectReference Include="..\Proline.ClassicOnline.CPoolObjects\CPoolObjects.csproj" /> 
-    <ProjectReference Include="..\Proline.ClassicOnline.F8Console\CDebugActions.csproj" />
-    <ProjectReference Include="..\Proline.ClassicOnline.LWScripting\CCoreSystem.csproj" />
-  </ItemGroup> 
+	</ItemGroup> 
 
 	<ItemGroup>
 		<Reference Include="Newtonsoft.Json">

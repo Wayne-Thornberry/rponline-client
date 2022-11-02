@@ -8,21 +8,54 @@
 		<PackageReference Include="CitizenFX.Core.Client" Version="1.0.5738" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\..\components\Proline.ClassicComponents.Character\CGameLogic.csproj" />
-	  <ProjectReference Include="..\..\components\Proline.ClassicComponents.Data\CDataStream.csproj" />
-	  <ProjectReference Include="..\..\components\Proline.ClassiclOnline.MConnection\CNetConnection.csproj" />
-	  <ProjectReference Include="..\..\components\Proline.ClassicOnline.CAddionalEvents\CAddionalEvents.csproj" />
-	  <ProjectReference Include="..\..\components\Proline.ClassicOnline.CNativeEvents\CNativeEvents.csproj" />
-	  <ProjectReference Include="..\..\components\Proline.ClassicOnline.CPoolObjects\CPoolObjects.csproj" />
-	  <ProjectReference Include="..\..\components\Proline.ClassicOnline.DebugInterface\CGameRendering.csproj" />
-	  <ProjectReference Include="..\..\components\Proline.ClassicOnline.F8Console\CDebugActions.csproj" />
-	  <ProjectReference Include="..\..\components\Proline.ClassicOnline.GasStation\CWorldObjects.csproj" />
-	  <ProjectReference Include="..\..\components\Proline.ClassicOnline.LWScripting\CCoreSystem.csproj" />
-	  <ProjectReference Include="..\..\components\Proline.ClassicOnline.MissionManager\CMissionManager.csproj" />
-	  <ProjectReference Include="..\..\components\Proline.ClassicOnline.MShop\CShopCatalogue.csproj" />
-	  <ProjectReference Include="..\..\components\Proline.ClassicOnline.ScriptAreas\CScriptAreas.csproj" />
-	</ItemGroup>
-	<ItemGroup>
+		<Reference Include="CAddionalEvents">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CAddionalEvents.dll</HintPath>
+		</Reference>
+		<Reference Include="CCoreSystem">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CCoreSystem.dll</HintPath>
+		</Reference>
+		<Reference Include="CDataStream">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CDataStream.dll</HintPath>
+		</Reference>
+		<Reference Include="CDebugActions">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CDebugActions.dll</HintPath>
+		</Reference>
+		<Reference Include="CGameLogic">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CGameLogic.dll</HintPath>
+		</Reference>
+		<Reference Include="CGameRendering">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CGameRendering.dll</HintPath>
+		</Reference>
+		<Reference Include="CitizenFX.Core.Client">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CitizenFX.Core.Client.dll</HintPath>
+		</Reference>
+		<Reference Include="CMissionManager">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CMissionManager.dll</HintPath>
+		</Reference>
+		<Reference Include="CNativeEvents">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CNativeEvents.dll</HintPath>
+		</Reference>
+		<Reference Include="CNetConnection">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CNetConnection.dll</HintPath>
+		</Reference>
+		<Reference Include="CPoolObjects">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CPoolObjects.dll</HintPath>
+		</Reference>
+		<Reference Include="CScreenRendering">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CScreenRendering.dll</HintPath>
+		</Reference>
+		<Reference Include="CScriptAreas">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CScriptAreas.dll</HintPath>
+		</Reference>
+		<Reference Include="CScriptObjs">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CScriptObjs.dll</HintPath>
+		</Reference>
+		<Reference Include="CShopCatalogue">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CShopCatalogue.dll</HintPath>
+		</Reference>
+		<Reference Include="CWorldObjects">
+		  <HintPath>..\..\..\vendor\OnlineEngine\CWorldObjects.dll</HintPath>
+		</Reference>
 		<Reference Include="Newtonsoft.Json">
 		  <HintPath>..\..\..\vendor\Newtonsoft.Json.dll</HintPath>
 		</Reference>

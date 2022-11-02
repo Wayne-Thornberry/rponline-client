@@ -1,6 +1,6 @@
-﻿using CitizenFX.Core;
-using Proline.ClassicOnline.CGameLogic.Data;
-using Proline.ClassicOnline.CScriptObjs;
+﻿using CGameLogic.Data;
+using CitizenFX.Core;
+using CScriptObjs;
 
 namespace Proline.ClassicOnline.Engine.Parts
 {

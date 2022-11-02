@@ -1,5 +1,5 @@
-﻿using Proline.ClassicOnline.CGameLogic;
-using Proline.ClassicOnline.CGameLogic.Data;
+﻿using CGameLogic;
+using CGameLogic.Data;
 
 namespace Proline.ClassicOnline.Engine.Parts
 {

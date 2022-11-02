@@ -1,5 +1,5 @@
 ﻿using CitizenFX.Core;
-using Proline.ClassicOnline.CWorldObjects;
+using CWorldObjects;
 
 namespace Proline.ClassicOnline.Engine.Parts
 {

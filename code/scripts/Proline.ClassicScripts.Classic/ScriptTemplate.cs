@@ -18,7 +18,7 @@ namespace LevelScripts
             while (!token.IsCancellationRequested)
             {
 
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
         }
     }
