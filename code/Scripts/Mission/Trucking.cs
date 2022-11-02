@@ -64,7 +64,7 @@ namespace LevelScripts.Mission
                     }
                 }
 
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
             EngineAPI.EndMission();
         }

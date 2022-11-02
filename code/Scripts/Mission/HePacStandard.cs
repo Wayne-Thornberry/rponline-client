@@ -68,7 +68,7 @@ namespace LevelScripts.Mission
         {
             Screen.ShowNotification("Oh look a bank");
             _worldBlip.IsFlashing = true;
-            await BaseScript.Delay(1000);
+            await EngineAPI.Delay(1000);
             _worldBlip.IsFlashing = false;
         }
 
@@ -210,7 +210,7 @@ namespace LevelScripts.Mission
                     DeletePeds();
                     //TerminateScript();
                 }
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
 
         }

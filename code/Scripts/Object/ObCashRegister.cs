@@ -67,7 +67,7 @@ namespace LevelScripts.Object
                     EngineAPI.MarkScriptAsNoLongerNeeded(this);
                     EngineAPI.TerminateScriptInstance(this);
                 }
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
 
         }

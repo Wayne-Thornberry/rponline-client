@@ -1,6 +1,7 @@
 ﻿using CitizenFX.Core;
 using CitizenFX.Core.Native;
 using CitizenFX.Core.UI;
+using Proline.ClassicOnline.Engine.Parts;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -194,7 +195,7 @@ namespace LevelScripts
         {
             while (Screen.Fading.IsFadingOut)
             {
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
 
             if (Screen.Fading.IsFadedOut)
@@ -202,7 +203,7 @@ namespace LevelScripts
 
             while (Screen.Fading.IsFadingIn)
             {
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
 
             API.PrepareMusicEvent("FM_INTRO_START");//FM_INTRO_START
@@ -219,7 +220,7 @@ namespace LevelScripts
             }
 
             while (!API.HasCutsceneLoaded())
-                await BaseScript.Delay(10);// - waiting for the cutscene to load
+                await EngineAPI.Delay(10);// - waiting for the cutscene to load
 
             if (IsMale(plyrId))
             {
@@ -271,7 +272,7 @@ namespace LevelScripts
 
             API.StartCutscene(4);// - START the custscene 
 
-            await BaseScript.Delay(31520);// - custscene time
+            await EngineAPI.Delay(31520);// - custscene time
             for (int i = 0; i < 6; i++)
             {
                 API.DeleteEntity(ref ped[i]);

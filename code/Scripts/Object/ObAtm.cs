@@ -248,7 +248,7 @@ namespace LevelScripts.Object
                     }
                 }
 
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
             io.Dispose();
         }

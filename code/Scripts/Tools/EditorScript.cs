@@ -117,7 +117,7 @@ namespace LevelScripts.Tools
                 //{
                 //    //ExampleAPI.DrawBoundingBoxFromPoints(_vertextPoints, 255, 255, 255, 125);
                 //}
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
             Game.PlayerPed.IsVisible = true;
             Game.PlayerPed.IsPositionFrozen = false;

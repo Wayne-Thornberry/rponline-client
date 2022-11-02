@@ -68,9 +68,9 @@ namespace LevelScripts.UI
                     EngineAPI.LogDebug($"R: {R}, r {r}, Theta {theta}, CurrentPos {position} X {x}, Y {y}");
 
                     API.SwitchOutPlayer(Game.PlayerPed.Handle, 1, 1);
-                    await BaseScript.Delay(3000);
+                    await EngineAPI.Delay(3000);
                     Game.PlayerPed.Position = new Vector3(x, y, World.GetGroundHeight(new Vector2(x, y)));
-                    //await BaseScript.Delay(3000); 
+                    //await EngineAPI.Delay(3000); 
                     switch (playId)
                     {
                         case 0:
@@ -86,7 +86,7 @@ namespace LevelScripts.UI
                             EngineAPI.StartNewScript("PlayerLoading");
                             break;
                     }
-                    await BaseScript.Delay(3000);
+                    await EngineAPI.Delay(3000);
                     API.SwitchInPlayer(Game.PlayerPed.Handle);
                     plySwitch = null;
                 }
@@ -124,7 +124,7 @@ namespace LevelScripts.UI
                     //new PointF(50f - (API.GetSafeZoneSize() - 0.89f) / 0.11f * 78f,
                     //50f - (API.GetSafeZoneSize() - 0.89f) / 0.11f * 50f)
                 }
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
         }
     }

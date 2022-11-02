@@ -15,7 +15,7 @@ namespace LevelScripts
                 EngineAPI.StartNewScript("LoadDefaultStats");
                 while (EngineAPI.GetInstanceCountOfScript("LoadDefaultStats") > 0)
                 {
-                    await BaseScript.Delay(1);
+                    await EngineAPI.Delay(1);
                 }
                 EngineAPI.SetCharacter(EngineAPI.CreateCharacter());
             }

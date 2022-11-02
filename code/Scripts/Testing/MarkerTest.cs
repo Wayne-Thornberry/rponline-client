@@ -23,7 +23,7 @@ namespace LevelScripts.Testing
                 {
                     break;
                 }
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
             EngineAPI.DeleteMarker(handle);
         }

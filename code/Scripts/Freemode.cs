@@ -80,7 +80,7 @@ namespace LevelScripts
                     }
                 }
 
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
         }
     }

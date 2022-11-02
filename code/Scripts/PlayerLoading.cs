@@ -20,7 +20,7 @@ namespace LevelScripts
                 EngineAPI.StartNewScript("LoadDefaultOnline");
                 while (EngineAPI.GetInstanceCountOfScript("LoadDefaultOnline") > 0)
                 {
-                    await BaseScript.Delay(1);
+                    await EngineAPI.Delay(1);
                 }
                 await EngineAPI.PullSaveFromCloud(); // Sends a load request to the server
                 if (EngineAPI.HasSaveLoaded())
@@ -147,12 +147,12 @@ namespace LevelScripts
                         EngineAPI.StartNewScript("PlayerSetup");
                         while (EngineAPI.GetInstanceCountOfScript("PlayerSetup") > 0)
                         {
-                            await BaseScript.Delay(1);
+                            await EngineAPI.Delay(1);
                         }
                         EngineAPI.StartNewScript("SaveNow");
                         while (EngineAPI.GetInstanceCountOfScript("SaveNow") > 0)
                         {
-                            await BaseScript.Delay(1);
+                            await EngineAPI.Delay(1);
                         }
                     }
                     EngineAPI.StartNewScript("PlayerLoading");

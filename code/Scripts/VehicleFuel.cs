@@ -1,4 +1,5 @@
 using CitizenFX.Core;
+using Proline.ClassicOnline.Engine.Parts;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -29,7 +30,7 @@ namespace LevelScripts
                     if (!(Game.PlayerPed.CurrentVehicle.CurrentRPM > DeadZone ||
       Game.PlayerPed.CurrentVehicle.CurrentRPM < -DeadZone))
                     {
-                        await BaseScript.Delay(0);
+                        await EngineAPI.Delay(0);
                         continue;
                     }
                     Game.PlayerPed.CurrentVehicle.FuelLevel -= Game.PlayerPed.CurrentVehicle.CurrentRPM / ConsumptionRate * Game.LastFrameTime;
@@ -37,7 +38,7 @@ namespace LevelScripts
                         Game.PlayerPed.CurrentVehicle.FuelLevel = 0f;
 
                 }
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
         }
     }

@@ -167,7 +167,7 @@ namespace LevelScripts.Buildings
                         break;
                 }
 
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
         }
 

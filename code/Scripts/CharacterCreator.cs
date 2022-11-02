@@ -23,7 +23,7 @@ namespace LevelScripts
             EngineAPI.StartNewScript("LoadDefaultOnline");
             while (EngineAPI.GetInstanceCountOfScript("LoadDefaultOnline") > 0)
             {
-                await BaseScript.Delay(1);
+                await EngineAPI.Delay(1);
             }
 
             Screen.Fading.FadeOut(500);
@@ -63,7 +63,7 @@ namespace LevelScripts
                             Finish();
                         break;
                 }
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
 
             World.RenderingCamera = null;
@@ -76,7 +76,7 @@ namespace LevelScripts
             EngineAPI.StartNewScript("PlayerSetup");
             while (EngineAPI.GetInstanceCountOfScript("PlayerSetup") > 0)
             {
-                await BaseScript.Delay(1);
+                await EngineAPI.Delay(1);
             }
 
             Game.PlayerPed.Position = new Vector3(0, 0, 70);
@@ -90,13 +90,13 @@ namespace LevelScripts
             EngineAPI.StartNewScript("SaveNow");
             while (EngineAPI.GetInstanceCountOfScript("SaveNow") > 0)
             {
-                await BaseScript.Delay(1);
+                await EngineAPI.Delay(1);
             }
 
             EngineAPI.StartNewScript("PlayerLoading");
             while (EngineAPI.GetInstanceCountOfScript("PlayerLoading") > 0)
             {
-                await BaseScript.Delay(1);
+                await EngineAPI.Delay(1);
             }
             Screen.LoadingPrompt.Hide();
             EngineAPI.StartNewScript("StartIntro");

@@ -19,7 +19,7 @@ namespace LevelScripts
                 {
                     EngineAPI.StartNewScript("UIInteractionMenu");
                 }
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
         }
     }

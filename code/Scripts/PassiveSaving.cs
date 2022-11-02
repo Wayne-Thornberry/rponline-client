@@ -26,11 +26,11 @@ namespace LevelScripts
                     EngineAPI.StartNewScript("SaveNow");
                     while (EngineAPI.GetInstanceCountOfScript("SaveNow") > 0)
                     {
-                        await BaseScript.Delay(1);
+                        await EngineAPI.Delay(1);
                     }
                     nextSaveTime = DateTime.UtcNow.AddMinutes(1);
                 }
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
 
         }

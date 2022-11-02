@@ -92,7 +92,7 @@ namespace LevelScripts.UI
                                 API.SwitchInPlayer(Game.PlayerPed.Handle);
                                 while (API.IsPlayerSwitchInProgress())
                                 {
-                                    await BaseScript.Delay(0);
+                                    await EngineAPI.Delay(0);
                                 }
                                 EngineAPI.StartNewScript("CharacterCreator");
                                 Stage = -1;
@@ -120,7 +120,7 @@ namespace LevelScripts.UI
                     //Hide();
                 }
                 Scaleform.Render2D();
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
         }
     }

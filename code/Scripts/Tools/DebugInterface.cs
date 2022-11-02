@@ -27,7 +27,7 @@ namespace LevelScripts.Tools
                    + Game.PlayerPed.Handle + "\n" +
                    _handles.Count + " Entities in the world ";
                 EngineAPI.DrawDebugText2D(t, new PointF(0.01f, 0.05f), 0.3f, 0);
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
         }
     }

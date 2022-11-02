@@ -68,7 +68,7 @@ namespace LevelScripts
                 if (_timer > 0)
                 {
                     _timer -= Game.LastFrameTime;
-                    await BaseScript.Delay(0);
+                    await EngineAPI.Delay(0);
                     continue;
                 }
 
@@ -119,7 +119,7 @@ namespace LevelScripts
                 }
                 //EngineAPI.LogDebug(Stage);
                 //EngineAPI.LogDebug(_timer);
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
         }
 

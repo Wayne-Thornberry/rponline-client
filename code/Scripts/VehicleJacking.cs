@@ -1,4 +1,5 @@
 using CitizenFX.Core;
+using Proline.ClassicOnline.Engine.Parts;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -70,7 +71,7 @@ namespace LevelScripts
                         }
                         break;
                 }
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
         }
     }

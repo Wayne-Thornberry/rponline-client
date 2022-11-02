@@ -21,7 +21,7 @@ namespace LevelScripts.UI
             //    {
             //        EngineAPI.MarkScriptAsNoLongerNeeded(this);
             //    }
-            //    await BaseScript.Delay(0);
+            //    await EngineAPI.Delay(0);
             //}
         }
     }

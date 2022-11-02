@@ -48,7 +48,7 @@ namespace LevelScripts.Event
             _truckBlip.IsFlashing = true;
             Screen.ShowNotification("An armoured truck has spawned in the world");
             Game.PlaySound("Friend_Deliver", "HUD_FRONTEND_MP_COLLECTABLE_SOUNDS");
-            await BaseScript.Delay(3000);
+            await EngineAPI.Delay(3000);
             _truckBlip.IsFlashing = false;
         }
 
@@ -106,7 +106,7 @@ namespace LevelScripts.Event
                     EngineAPI.MarkScriptAsNoLongerNeeded(this);
                     EngineAPI.TerminateScriptInstance(this);
                 }
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
 
         }
@@ -123,7 +123,7 @@ namespace LevelScripts.Event
             _guardOne = await _armouredTruck.CreatePedOnSeat(VehicleSeat.Driver, PedHash.Security01SMM);
             _guardTwo = await _armouredTruck.CreatePedOnSeat(VehicleSeat.Passenger, PedHash.Security01SMM);
             while (!API.NetworkDoesNetworkIdExist(_guardOne.NetworkId) ||
-                   !API.NetworkDoesNetworkIdExist(_guardTwo.NetworkId)) await BaseScript.Delay(0);
+                   !API.NetworkDoesNetworkIdExist(_guardTwo.NetworkId)) await EngineAPI.Delay(0);
         }
 
 
@@ -131,7 +131,7 @@ namespace LevelScripts.Event
         {
             _armouredTruck = await World.CreateVehicle(VehicleHash.Stockade, place.Position,
                 GameMath.DirectionToHeading(place.Rotation));
-            while (!API.NetworkDoesNetworkIdExist(_armouredTruck.NetworkId)) await BaseScript.Delay(0);
+            while (!API.NetworkDoesNetworkIdExist(_armouredTruck.NetworkId)) await EngineAPI.Delay(0);
         }
 
         private void LootTruck()

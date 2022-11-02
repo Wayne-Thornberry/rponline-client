@@ -63,7 +63,7 @@ namespace LevelScripts.Mission
                 {
                     break;
                 }
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
 
             Teardown();

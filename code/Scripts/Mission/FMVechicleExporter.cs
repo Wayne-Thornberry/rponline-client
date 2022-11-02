@@ -99,7 +99,7 @@ namespace LevelScripts.Mission
                         _oneTime = false;
                     }
                 }
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
         }
     }

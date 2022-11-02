@@ -36,7 +36,7 @@ namespace LevelScripts
                             API.FreezeEntityPosition(Game.PlayerPed.Handle, true);
                             Game.PlayerPed.Position = new Vector3(0, 0, 70);
                             Screen.LoadingPrompt.Show("Loading Freemode...");
-                            await BaseScript.Delay(5000);
+                            await EngineAPI.Delay(5000);
                             state = 1;
                         }
                         break;
@@ -52,7 +52,7 @@ namespace LevelScripts
                                 EngineAPI.StartNewScript("UIMainMenu");
                                 while (EngineAPI.GetInstanceCountOfScript("UIMainMenu") > 0)
                                 {
-                                    await BaseScript.Delay(0);
+                                    await EngineAPI.Delay(0);
                                 }
                             }
 
@@ -65,13 +65,13 @@ namespace LevelScripts
                             {
                                 while (EngineAPI.GetInstanceCountOfScript("PlayerLoading") > 0)
                                 {
-                                    await BaseScript.Delay(0);
+                                    await EngineAPI.Delay(0);
                                 }
                                 API.FreezeEntityPosition(Game.PlayerPed.Handle, false);
                                 API.SwitchInPlayer(Game.PlayerPed.Handle);
                                 while (API.IsPlayerSwitchInProgress())
                                 {
-                                    await BaseScript.Delay(0);
+                                    await EngineAPI.Delay(0);
                                 }
                                 state = 2;
                             }
@@ -112,13 +112,13 @@ namespace LevelScripts
                     case 999:
                         while (EngineAPI.GetInstanceCountOfScript("CharacterCreator") > 0)
                         {
-                            await BaseScript.Delay(1);
+                            await EngineAPI.Delay(1);
                         }
 
 
                         while (EngineAPI.GetInstanceCountOfScript("StartIntro") > 0)
                         {
-                            await BaseScript.Delay(1);
+                            await EngineAPI.Delay(1);
                         }
                         state = 2;
 
@@ -126,7 +126,7 @@ namespace LevelScripts
                 }
                 if (state == 3)
                     break;
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
         }
     }

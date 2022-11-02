@@ -37,7 +37,7 @@ namespace LevelScripts.Object
                         stat.SetValue(stat.GetValue() + 1000);
                         break;
                     }
-                    await BaseScript.Delay(0);
+                    await EngineAPI.Delay(0);
                 }
 
                 if (_blip != null)

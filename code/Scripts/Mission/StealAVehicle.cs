@@ -68,7 +68,7 @@ namespace LevelScripts.Mission
                         _targetBlip.Alpha = 255;
                     }
                 }
-                await BaseScript.Delay(0);
+                await EngineAPI.Delay(0);
             }
         }
     }

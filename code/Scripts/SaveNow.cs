@@ -17,7 +17,7 @@ namespace LevelScripts
                 return;
             Screen.LoadingPrompt.Show("Saving...", LoadingSpinnerType.SocialClubSaving);
             await EngineAPI.SendSaveToCloud();
-            await BaseScript.Delay(1000);
+            await EngineAPI.Delay(1000);
             Screen.LoadingPrompt.Hide();
         }
     }
