@@ -2,8 +2,7 @@
 using CitizenFX.Core.Native;
 using CitizenFX.Core.UI;
 using Newtonsoft.Json;
-using Proline.ClassicOnline.Engine.Parts;
-using Proline.Resource;
+using Proline.ClassicOnline.Engine.Parts; 
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading;
@@ -160,12 +159,12 @@ namespace LevelScripts.Tools
                     {
                         var entity = _raycastResult.HitEntity;
                         Screen.ShowSubtitle(string.Format("{0}\n{1}\n{2}", entity.Handle, entity.Position, entity.Rotation));
-                        Console.WriteLine(string.Format("{0}\n{1}\n{2}", entity.Handle, entity.Position, entity.Rotation));
+                        //Console.WriteLine(string.Format("{0}\n{1}\n{2}", entity.Handle, entity.Position, entity.Rotation));
                     }
                     else
                     {
                         Screen.ShowSubtitle(string.Format("{0}", _raycastResult.HitPosition));
-                        Console.WriteLine(string.Format("{0}, {1}, {2}", _raycastResult.HitPosition, $"new Vector3({_raycastResult.HitPosition.X}f, {_raycastResult.HitPosition.Y}f, {_raycastResult.HitPosition.Z}f)", JsonConvert.SerializeObject(_raycastResult.HitPosition)));
+                        //Console.WriteLine(string.Format("{0}, {1}, {2}", _raycastResult.HitPosition, $"new Vector3({_raycastResult.HitPosition.X}f, {_raycastResult.HitPosition.Y}f, {_raycastResult.HitPosition.Z}f)", JsonConvert.SerializeObject(_raycastResult.HitPosition)));
                     }
                 }
 
