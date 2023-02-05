@@ -40,12 +40,12 @@ Setup(ctx =>
 
     packageVersion = $"{version}{prerelease}"; 
     var dir = Context.Environment.WorkingDirectory; 
-    outputDir = $"{artificatsOutputDir}";///{dir.GetDirectoryName()}/";
+    outputDir = $"{artificatsOutputDir}/{configuration}/";
 
     resource = new ProjectInformation
     { 
         Name = dir.GetDirectoryName(),
-        FullPath = dir.FullPath,
+        FullPath = dir.FullPath + "/code",
         ProjectType = 2,
         //IsTestProject = p.GetFilenameWithoutExtension().ToString().EndsWith("Tests")
     };
@@ -109,8 +109,35 @@ Task("Deploy")
     .IsDependentOn("Build")
     .Does(() =>
 { 
-  
-  
+    var dir = Context.Environment.WorkingDirectory; 
+    string name = dir.GetDirectoryName().ToLower();
+    string packagePath = "./package/";
+    string deployPath = "D:/ProjectOnline/resources/" + name;
+    string repo = "./";
+
+    //we need to build the directory for the game
+    if(DirectoryExists(packagePath))
+    { 
+        DeleteDirectory(packagePath, new DeleteDirectorySettings {
+            Recursive = true,
+            Force = true
+        });
+    }
+    CreateDirectory(packagePath);
+ 
+    //we need to deploy the parts of the game  
+    CopyFiles(repo + "./artifacts/debug/*.*", packagePath);
+    CopyFiles(repo + "./config/*.*", packagePath);
+    CopyDirectory(repo + "./data", packagePath);
+
+    if(DirectoryExists(deployPath))
+    { 
+        DeleteDirectory(deployPath, new DeleteDirectorySettings {
+                Recursive = true,
+                Force = true
+            });
+    }
+    CopyDirectory(packagePath, deployPath) ;
 });
 
 //////////////////////////////////////////////////////////////////////

@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net452</TargetFramework>
+    <AssemblyName>$(MSBuildProjectName).net</AssemblyName>
+  </PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="CitizenFX.Core.Client" Version="1.0.5738" />
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>..\..\vendor\NewtonsoftJson\V10.0-Portable\Newtonsoft.Json.dll</HintPath>
+		</Reference>
+		<Reference Include="Proline.Resource.Client">
+		  <HintPath>..\..\vendor\Online-Resource-Libraries\v0.1.0\Proline.Resource.Client.dll</HintPath>
+		</Reference>
+		<Reference Include="Proline.Resource.Component.Client">
+		  <HintPath>..\..\vendor\Online-Resource-Libraries\v0.1.0\Proline.Resource.Component.Client.dll</HintPath>
+		</Reference>
+		<Reference Include="Proline.Resource.Configuration.Client">
+		  <HintPath>..\..\vendor\Online-Resource-Libraries\v0.1.0\Proline.Resource.Configuration.Client.dll</HintPath>
+		</Reference>
+		<Reference Include="Proline.Resource.Eventing.Client">
+		  <HintPath>..\..\vendor\Online-Resource-Libraries\v0.1.0\Proline.Resource.Eventing.Client.dll</HintPath>
+		</Reference>
+		<Reference Include="Proline.Resource.Framework.Client">
+		  <HintPath>..\..\vendor\Online-Resource-Libraries\v0.1.0\Proline.Resource.Framework.Client.dll</HintPath>
+		</Reference>
+		<Reference Include="Proline.Resource.Globals.Client">
+		  <HintPath>..\..\vendor\Online-Resource-Libraries\v0.1.0\Proline.Resource.Globals.Client.dll</HintPath>
+		</Reference>
+		<Reference Include="Proline.Resource.IO.Client">
+		  <HintPath>..\..\vendor\Online-Resource-Libraries\v0.1.0\Proline.Resource.IO.Client.dll</HintPath>
+		</Reference>
+		<Reference Include="Proline.Resource.Logging.Client">
+		  <HintPath>..\..\vendor\Online-Resource-Libraries\v0.1.0\Proline.Resource.Logging.Client.dll</HintPath>
+		</Reference>
+		<Reference Include="Proline.Resource.Scripting.Client">
+		  <HintPath>..\..\vendor\Online-Resource-Libraries\v0.1.0\Proline.Resource.Scripting.Client.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+</Project>
