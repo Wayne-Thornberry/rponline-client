@@ -128,7 +128,9 @@ Task("Deploy")
     //we need to deploy the parts of the game  
     CopyFiles(repo + "./artifacts/debug/*.*", packagePath);
     CopyFiles(repo + "./config/*.*", packagePath);
+    CopyFiles(repo + "./ext/*.*", packagePath);
     CopyDirectory(repo + "./data", packagePath);
+    DeleteFiles(packagePath + "CitizenFX.*");
 
     if(DirectoryExists(deployPath))
     { 
