@@ -111,8 +111,9 @@ Task("Deploy")
 { 
     var dir = Context.Environment.WorkingDirectory; 
     string name = dir.GetDirectoryName().ToLower();
-    string packagePath = "./package/";
-    string deployPath = "D:/ProjectOnline/resources/" + name;
+	string resourceName = $"{name}-{configuration}";
+    string packagePath = $"./package/";
+    string deployPath = $"D:/ProjectOnline/resources/{name}/";
     string repo = "./";
 
     //we need to build the directory for the game
@@ -126,7 +127,7 @@ Task("Deploy")
     CreateDirectory(packagePath);
  
     //we need to deploy the parts of the game  
-    CopyFiles(repo + "./artifacts/debug/*.*", packagePath);
+    CopyFiles(repo + $"./artifacts/{configuration}/*.*", packagePath);
     CopyFiles(repo + "./config/*.*", packagePath);
     CopyFiles(repo + "./ext/*.*", packagePath);
     CopyDirectory(repo + "./data", packagePath);

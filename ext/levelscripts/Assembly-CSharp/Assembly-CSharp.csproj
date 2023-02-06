@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net452</TargetFramework>
+		<Platforms>AnyCPU</Platforms>
+		<Configurations>Debug;Release</Configurations>
+		<OutputType>Library</OutputType>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="libs\**" />
+	  <EmbeddedResource Remove="libs\**" />
+	  <None Remove="libs\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="UI\UIMenuController.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="CitizenFX.Core.Client" Version="1.0.5738" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>..\..\..\vendor\NewtonsoftJson\V10.0-Portable\Newtonsoft.Json.dll</HintPath>
+		</Reference>
+		<Reference Include="Proline.ClassicOnline.Scaleforms">
+			<HintPath>..\..\..\vendor\CFXExtended\v0.1.0\Proline.ClassicOnline.Scaleforms.dll</HintPath>
+		</Reference>
+		<Reference Include="Proline.OnlineEngine.Core">
+		  <HintPath>..\..\..\vendor\Core\Proline.OnlineEngine.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Proline.Resource.Component.Client">
+			<HintPath>..\..\..\vendor\Online-Resource-Libraries\v0.1.0\Proline.Resource.Component.Client.dll</HintPath>
+		</Reference>
+		<Reference Include="RPOnlineEngine">
+		  <HintPath>..\..\..\artifacts\debug\RPOnlineEngine.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+</Project>

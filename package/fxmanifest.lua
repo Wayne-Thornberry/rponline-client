@@ -5,7 +5,7 @@ author 'Wayno717'
 description 'Project Online Freemode Game'
 version '1.0.0.0'
 
-client_script 'OnlineEngine.net.dll'
+client_script 'RPOnlineGame.net.dll'
 files {
 '*.txt',
 '*.json',
