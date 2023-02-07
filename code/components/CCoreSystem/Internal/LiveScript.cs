@@ -91,11 +91,11 @@ namespace CCoreSystem.Internal
             Console.WriteLine(string.Format("{0} Executed Succesfully, Running", Name));
         }
 
-        internal static int StartNew(object instance)
+        internal static int StartNew(object instance, object[] args)
         {
             var script = new LiveScript(instance);
             // We need to create a cacellation token that can stop the base while loop in the scripts  
-            script.Start();
+            script.Start(args);
 
             return script.Id;
         }

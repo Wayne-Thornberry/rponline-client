@@ -38,6 +38,8 @@ namespace LevelScripts
                 else
                 {
                     EngineAPI.MarkScriptAsNoLongerNeeded(this);
+                    EngineAPI.TerminateScriptInstance(this);
+                    break;
                 }
                 await EngineAPI.Delay(0);
             }

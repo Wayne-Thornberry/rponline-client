@@ -1,4 +1,5 @@
 ﻿using CCoreSystem;
+using CDebugActions;
 using CitizenFX.Core;
 using CitizenFX.Core.Native;
 using CScriptObjs.Internal;
@@ -43,11 +44,12 @@ namespace CScriptObjs.Tasks
                 return;
             }
             var entity = Entity.FromHandle(so.Handle);
+            var log = new CDebugActionsAPI();
             foreach (var item in so.Data)
             {
                 if (IsEntityWithinActivationRange(entity, Game.PlayerPed, item.ActivationRange) && so.State == 0)
                 {
-                    _log.Debug(so.Handle + " Player is within range here, we should start the script and no longer track this for processing");
+                    log.LogDebug(so.Handle + " Player is within range here, we should start the script and no longer track this for processing");
                     var api = new CCoreSystemAPI();
                     api.StartNewScript(item.ScriptName, so.Handle);
                     so.State = 1;

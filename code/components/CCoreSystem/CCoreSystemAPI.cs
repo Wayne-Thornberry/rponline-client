@@ -106,7 +106,7 @@ namespace CCoreSystem
                 }
 
                 // Create a shell for the script
-                var id = LiveScript.StartNew(instance);
+                var id = LiveScript.StartNew(instance, args);
 
                 return id;
             }
