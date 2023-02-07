@@ -4,7 +4,9 @@
 		<TargetFramework>net452</TargetFramework>
 		<Platforms>AnyCPU</Platforms>
 		<Configurations>Debug;Release</Configurations>
-		<AssemblyName>$(MSBuildProjectName).net</AssemblyName> 
+		<AssemblyName>$(MSBuildProjectName).net</AssemblyName>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Deterministic>false</Deterministic>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -25,6 +27,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\libs\RPOnline\RPOnlineCore.csproj" />
+	  <ProjectReference Include="..\..\tests\RPOnlineTests\RPOnlineTests.csproj" />
 	</ItemGroup>
 	
 	<ItemGroup>

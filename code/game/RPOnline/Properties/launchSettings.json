@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "RPOnlineGame": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\Wayno717\\AppData\\Local\\FiveM\\FiveM.exe",
+      "commandLineArgs": "+connect localhost"
+    }
+  }
+}
