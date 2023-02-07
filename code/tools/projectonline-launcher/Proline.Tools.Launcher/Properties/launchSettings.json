@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Proline.Tools.Launcher": {
+      "commandName": "Project",
+      "workingDirectory": "D:\\ProjectOnline"
+    }
+  }
+}
