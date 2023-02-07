@@ -73,7 +73,7 @@ namespace LevelScripts.Mission
                                 _targetVehicle.Delete();
                                 EngineAPI.PutVehicleIn(name);
                                 _targetVehicle = null; 
-                                EngineAPI.AddValueToWalletBalance(EngineAPI.GetCharacterWalletBalance() + 15000);
+                                EngineAPI.AddValueToWalletBalance(15000);
                             }
                             else
                             {
