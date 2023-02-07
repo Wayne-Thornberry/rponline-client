@@ -1,7 +1,8 @@
 ﻿using Proline.Resource.Framework;
+using RPOnline.Parts;
 using System.Linq;
 
-namespace CCoreSystem.Commands
+namespace RPOnlineGame.Commands
 {
     public class StartNewScriptCommand : ResourceCommand
     {
@@ -15,9 +16,8 @@ namespace CCoreSystem.Commands
             {
                 return;
             }
-            var scriptName = args[0].ToString();
-            var coreAPI = new CCoreSystemAPI();
-            coreAPI.StartNewScript(scriptName);
+            var scriptName = args[0].ToString(); 
+            EngineAPI.StartNewScript(scriptName);
         }
     }
 }

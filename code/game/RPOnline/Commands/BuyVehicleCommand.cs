@@ -1,8 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Proline.Resource.Framework;
 using Proline.Resource.IO;
+using RPOnline.Parts;
 
-namespace CShopCatalogue.Commands
+namespace RPOnlineGame.Commands
 {
     public class BuyVehicleCommand : ResourceCommand
     {
@@ -14,9 +15,8 @@ namespace CShopCatalogue.Commands
         {
             if (args.Length > 0)
             {
-                var vehicle = args[0].ToString();
-                var api = new CShopCatalogueAPI();
-                api.BuyVehicle(vehicle);
+                var vehicle = args[0].ToString(); 
+                EngineAPI.BuyVehicle(vehicle);
             }
 
         }

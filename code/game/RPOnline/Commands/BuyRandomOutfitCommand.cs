@@ -3,7 +3,7 @@ using CitizenFX.Core;
 
 using Proline.Resource.Framework;
 
-namespace CNetConnection.Commands
+namespace RPOnlineGame.Commands
 {
     public class BuyRandomOutfitCommand : ResourceCommand
     {
@@ -13,12 +13,12 @@ namespace CNetConnection.Commands
 
         protected override void OnCommandExecute(params object[] args)
         {
-            var api = new CGameLogicAPI();
-            if (api.GetCharacterBankBalance() > 250)
+            var EngineAPI = new CGameLogicAPI();
+            if (EngineAPI.GetCharacterBankBalance() > 250)
             {
                 Game.Player.Character.Style.RandomizeOutfit();
                 Game.Player.Character.Style.RandomizeProps();
-                api.SetCharacterBankBalance(250);
+                EngineAPI.SetCharacterBankBalance(250);
             }
         }
     }

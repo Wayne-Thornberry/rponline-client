@@ -1,12 +1,10 @@
 ﻿using CDataStream;
 using CGameLogic;
 using CitizenFX.Core;
-
-
 using Proline.Resource.Framework;
 using System;
 
-namespace CNetConnection.Commands
+namespace RPOnlineGame.Commands
 {
     public class BuyRandomWeaponCommand : ResourceCommand
     {
@@ -16,8 +14,8 @@ namespace CNetConnection.Commands
 
         protected override void OnCommandExecute(params object[] args)
         {
-            var api = new CGameLogicAPI();
-            if (api.GetCharacterBankBalance() > 250)
+            var EngineAPI = new CGameLogicAPI();
+            if (EngineAPI.GetCharacterBankBalance() > 250)
             {
 
                 Array values = Enum.GetValues(typeof(WeaponHash));
@@ -33,7 +31,7 @@ namespace CNetConnection.Commands
                 dataAPI.AddDataFileValue("WeaponAmmo", ammo);
                 dataAPI.SaveDataFile(id);
 
-                api.SubtractValueFromBankBalance(250);
+                EngineAPI.SubtractValueFromBankBalance(250);
             }
         }
     }

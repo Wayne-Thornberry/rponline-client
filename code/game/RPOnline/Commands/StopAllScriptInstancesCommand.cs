@@ -1,8 +1,8 @@
-﻿using CCoreSystem.Internal;
+﻿
 using Proline.Resource.Framework;
 using System.Linq;
 
-namespace CCoreSystem.Commands
+namespace RPOnlineGame.Commands
 {
     public class StopAllScriptInstancesCommand : ResourceCommand
     {

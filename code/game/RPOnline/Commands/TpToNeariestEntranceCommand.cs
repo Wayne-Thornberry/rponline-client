@@ -1,8 +1,9 @@
 ﻿using CitizenFX.Core;
 
 using Proline.Resource.Framework;
+using RPOnline.Parts;
 
-namespace CWorldObjects.Commands
+namespace RPOnlineGame.Commands
 {
     public class TpToNeariestEntrance : ResourceCommand
     {
@@ -11,9 +12,8 @@ namespace CWorldObjects.Commands
         }
 
         protected override void OnCommandExecute(params object[] args)
-        {
-            var api = new CWorldObjectsAPI();
-            var entrance = api.GetBuildingPosition(api.GetNearestBuilding());
+        { 
+            var entrance = EngineAPI.GetBuildingPosition(EngineAPI.GetNearestBuilding());
             Game.PlayerPed.Position = entrance;
         }
     }

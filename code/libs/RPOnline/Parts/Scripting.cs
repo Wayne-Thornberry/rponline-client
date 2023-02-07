@@ -65,5 +65,9 @@ namespace RPOnline.Parts
             var coreAPI = new CCoreSystemAPI();
             coreAPI.TerminateScriptInstance(taskId);
         }
+
+#if DEBUG
+    // Debug only APIs DO NOT PACKAGE IN RELEASE
+#endif
     }
 }

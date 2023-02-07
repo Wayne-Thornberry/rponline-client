@@ -8,7 +8,23 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Commands\DoOutfitThingCommand.cs" />
+	  <Compile Remove="Commands\ListActiveScriptsCommand.cs" />
+	  <Compile Remove="Commands\ListAllTasksCommand.cs" />
+	  <Compile Remove="Commands\ListSaveFilesCommand.cs" />
+	  <Compile Remove="Commands\ListScriptsCommand.cs" />
+	  <Compile Remove="Commands\OutputActiveSaveFilePropertiesCommand.cs" />
+	  <Compile Remove="Commands\OutputSaveFileDataCommand.cs" />
+	  <Compile Remove="Commands\SelectSaveFileCommand.cs" />
+	  <Compile Remove="Commands\StopAllScriptInstancesCommand.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <PackageReference Include="CitizenFX.Core.Client" Version="1.0.5738" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\libs\RPOnline\RPOnlineCore.csproj" />
 	</ItemGroup>
 	
 	<ItemGroup>

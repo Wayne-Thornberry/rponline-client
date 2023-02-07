@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using Proline.Resource.Framework;
 using System;
 
-namespace CNetConnection.Commands
+namespace RPOnlineGame.Commands
 {
     public class BuyRandomVehicleCommand : ResourceCommand
     {
@@ -18,18 +18,18 @@ namespace CNetConnection.Commands
         protected override void OnCommandExecute(params object[] args)
         {
 
-            var api = new CGameLogicAPI();
-            if (api.GetCharacterBankBalance() > 250)
+            var EngineAPI = new CGameLogicAPI();
+            if (EngineAPI.GetCharacterBankBalance() > 250)
             {
-                if (api.HasCharacter())
+                if (EngineAPI.HasCharacter())
                 {
-                    if (api.GetPersonalVehicle() != null)
+                    if (EngineAPI.GetPersonalVehicle() != null)
                     {
-                        api.DeletePersonalVehicle();
+                        EngineAPI.DeletePersonalVehicle();
                     }
 
 
-                    api.SetCharacterBankBalance(250);
+                    EngineAPI.SetCharacterBankBalance(250);
                     Array values = Enum.GetValues(typeof(VehicleHash));
                     Random random = new Random();
                     VehicleHash randomBar = (VehicleHash)values.GetValue(random.Next(values.Length));
@@ -37,7 +37,7 @@ namespace CNetConnection.Commands
                     task.ContinueWith(e =>
                     {
                         var vehicle = e.Result;
-                        api.SetCharacterPersonalVehicle(vehicle.Handle);
+                        EngineAPI.SetCharacterPersonalVehicle(vehicle.Handle);
 
                         var id = "PlayerVehicle";
                         var dataAPI = new CDataStreamAPI();

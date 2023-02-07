@@ -1,12 +1,13 @@
 ﻿using CitizenFX.Core;
 using Proline.Resource.Framework;
+using RPOnline.Parts;
 using System.Threading.Tasks;
 
-namespace CWorldObjects.Commands
+namespace RPOnlineGame.Commands
 {
-    public class PopulateSixGarageRandomCommand : ResourceCommand
+    public class PopulateTwoGarageRandomCommand : ResourceCommand
     {
-        public PopulateSixGarageRandomCommand() : base("PopulateSixGarageRandom")
+        public PopulateTwoGarageRandomCommand() : base("PopulateTwoGarageRandom")
         {
         }
 
@@ -17,14 +18,13 @@ namespace CWorldObjects.Commands
 
         private static async Task DoStuff()
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 2; i++)
             {
                 //Array values = Enum.GetValues(typeof(VehicleHash));
                 //Random random = new Random();
                 //VehicleHash randomBar = (VehicleHash)values.GetValue(random.Next(values.Length));
                 var vehicle = await World.CreateVehicle(new Model(VehicleHash.Buffalo3), Game.PlayerPed.Position);
-                var api = new CWorldObjectsAPI();
-                api.PlaceVehicleInGarageSlot("6CarGarage", i, vehicle);
+                EngineAPI.PlaceVehicleInGarageSlot("2CarGarage", i, vehicle);
             }
         }
     }

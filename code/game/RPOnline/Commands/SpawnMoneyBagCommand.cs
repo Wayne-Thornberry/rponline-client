@@ -2,7 +2,7 @@
 using Proline.Resource.Framework;
 using System.Threading.Tasks;
 
-namespace CWorldObjects.Commands
+namespace RPOnlineGame.Commands
 {
     public class SpawnMoneyBagCommand : ResourceCommand
     {

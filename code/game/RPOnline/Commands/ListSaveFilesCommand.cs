@@ -1,9 +1,9 @@
-﻿using CDataStream.Internal;
+﻿
 using CitizenFX.Core;
 using Proline.Resource.Framework;
 using Console = Proline.Resource.Console;
 
-namespace CDataStream.Commands
+namespace RPOnlineGame.Commands
 {
     public class ListSaveFilesCommand : ResourceCommand
     {

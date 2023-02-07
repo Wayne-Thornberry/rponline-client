@@ -1,8 +1,8 @@
-﻿using CCoreSystem.Internal;
+﻿
 using Proline.Resource.Framework;
 using Console = Proline.Resource.Console;
 
-namespace CCoreSystem.Commands
+namespace RPOnlineGame.Commands
 {
     public class ListAllTasksCommand : ResourceCommand
     {

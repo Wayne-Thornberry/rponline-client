@@ -1,6 +1,7 @@
 ﻿using Proline.Resource.Framework;
+using RPOnline.Parts;
 
-namespace CWorldObjects.Commands
+namespace RPOnlineGame.Commands
 {
     public class ExitProperty : ResourceCommand
     {
@@ -11,9 +12,8 @@ namespace CWorldObjects.Commands
         protected override void OnCommandExecute(params object[] args)
         {
             if (args.Length == 3)
-            {
-                var api = new CWorldObjectsAPI();
-                api.ExitProperty(args[0].ToString(), args[1].ToString(), args[2].ToString());
+            { 
+                EngineAPI.ExitProperty(args[0].ToString(), args[1].ToString(), args[2].ToString());
             }
         }
     }

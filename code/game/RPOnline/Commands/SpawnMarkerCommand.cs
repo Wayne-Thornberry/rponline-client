@@ -3,11 +3,11 @@ using Proline.Resource.Framework;
 using System;
 using Console = Proline.Resource.Console;
 
-namespace CWorldObjects.Commands
+namespace RPOnlineGame.Commands
 {
-    public class SpawnVehicleCommand : ResourceCommand
+    public class SpawnMarkerCommand : ResourceCommand
     {
-        public SpawnVehicleCommand() : base("SpawnVehicle")
+        public SpawnMarkerCommand() : base("SpawnMarker")
         {
         }
 

@@ -1,10 +1,10 @@
-﻿using CDataStream.Internal;
+﻿
 using Newtonsoft.Json;
 
 using Proline.Resource.Framework;
 using Console = Proline.Resource.Console;
 
-namespace CDataStream.Commands
+namespace RPOnlineGame.Commands
 {
     public class OutputActiveSaveFilePropertiesCommand : ResourceCommand
     {

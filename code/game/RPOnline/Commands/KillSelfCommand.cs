@@ -1,7 +1,7 @@
 ﻿using CitizenFX.Core;
 using Proline.Resource.Framework;
 
-namespace CGameLogic.Commands
+namespace RPOnlineGame.Commands
 {
     public class KillSelfCommand : ResourceCommand
     {
