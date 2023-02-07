@@ -12,18 +12,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\components\CAddionalEvents\CAddionalEvents.csproj" />
 	  <ProjectReference Include="..\..\components\CCoreSystem\CCoreSystem.csproj" />
 	  <ProjectReference Include="..\..\components\CDataStream\CDataStream.csproj" />
 	  <ProjectReference Include="..\..\components\CDebugActions\CDebugActions.csproj" />
 	  <ProjectReference Include="..\..\components\CGameLogic\CGameLogic.csproj" />
 	  <ProjectReference Include="..\..\components\CGameRendering\CGameRendering.csproj" />
 	  <ProjectReference Include="..\..\components\CMissionManager\CMissionManager.csproj" />
-	  <ProjectReference Include="..\..\components\CNativeEvents\CNativeEvents.csproj" />
-	  <ProjectReference Include="..\..\components\CNetConnection\CNetConnection.csproj" />
 	  <ProjectReference Include="..\..\components\CPoolObjects\CPoolObjects.csproj" />
 	  <ProjectReference Include="..\..\components\CScreenRendering\CScreenRendering.csproj" />
-	  <ProjectReference Include="..\..\components\CScriptAreas\CScriptAreas.csproj" />
 	  <ProjectReference Include="..\..\components\CScriptObjs\CScriptObjs.csproj" />
 	  <ProjectReference Include="..\..\components\CShopCatalogue\CShopCatalogue.csproj" />
 	  <ProjectReference Include="..\..\components\CWorldObjects\CWorldObjects.csproj" />

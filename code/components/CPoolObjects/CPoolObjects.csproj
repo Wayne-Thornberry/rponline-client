@@ -4,6 +4,8 @@
 		<TargetFramework>net452</TargetFramework>
 		<Platforms>AnyCPU</Platforms>
 		<Configurations>Debug;Release</Configurations>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Deterministic>false</Deterministic>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="CitizenFX.Core.Client" Version="1.0.5738" />

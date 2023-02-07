@@ -22,6 +22,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\libs\RPOnline\RPOnlineCore.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Reference Include="Microsoft.CSharp" />
 		<Reference Include="Newtonsoft.Json">
 			<HintPath>..\..\..\vendor\NewtonsoftJson\V10.0-Portable\Newtonsoft.Json.dll</HintPath>
@@ -34,9 +38,6 @@
 		</Reference>
 		<Reference Include="Proline.Resource.Component.Client">
 			<HintPath>..\..\..\vendor\Online-Resource-Libraries\v0.1.0\Proline.Resource.Component.Client.dll</HintPath>
-		</Reference>
-		<Reference Include="RPOnlineEngine">
-		  <HintPath>..\..\..\artifacts\debug\RPOnlineEngine.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 

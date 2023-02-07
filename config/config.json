@@ -13,7 +13,7 @@
         "Proline.Resource.IO.Client",
         "Proline.Resource.Framework.Client",
         "Proline.Resource.Logging.Client",
-        "Proline.Resource.Globals.Client", 
+        "Proline.Resource.Globals.Client"
     ], 
 
     "LoggingConfiguration": {
@@ -39,7 +39,7 @@
 	
 	"scriptingConfigSection" :{ 
         "levelScriptAssemblies" : [
-			"Assembly-CSharp" 
+            "Assembly-CSharp"
 		]
     },
 	"moduleBrainSection" :{ 

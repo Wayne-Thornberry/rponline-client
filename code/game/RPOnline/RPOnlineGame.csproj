@@ -10,10 +10,6 @@
 	<ItemGroup>
 	  <PackageReference Include="CitizenFX.Core.Client" Version="1.0.5738" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\..\engine\RPOnline\RPOnlineEngine.csproj" />
-	</ItemGroup>
 	
 	<ItemGroup>
 		<Reference Include="Microsoft.CSharp" />

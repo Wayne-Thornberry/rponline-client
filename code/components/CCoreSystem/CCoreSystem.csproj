@@ -4,6 +4,8 @@
 		<TargetFramework>net452</TargetFramework>
 		<Platforms>AnyCPU</Platforms>
 		<Configurations>Debug;Release</Configurations>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Deterministic>false</Deterministic>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -13,9 +15,6 @@
 
 	<ItemGroup>
 		<Reference Include="Microsoft.CSharp" />
-		<Reference Include="Proline.Resource">
-			
-		</Reference>
 		<Reference Include="Proline.Resource.Client">
 			<HintPath>..\..\..\vendor\Online-Resource-Libraries\v0.1.0\Proline.Resource.Client.dll</HintPath>
 		</Reference>
