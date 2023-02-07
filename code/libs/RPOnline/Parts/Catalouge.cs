@@ -10,6 +10,7 @@ namespace RPOnline.Parts
         {
             var api = new CShopCatalogueAPI();
             api.BuyVehicle(vehicleName);
+            // some metrics and audits
         }
     }
 }

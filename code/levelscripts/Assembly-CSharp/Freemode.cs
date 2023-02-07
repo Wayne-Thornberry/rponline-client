@@ -2,6 +2,7 @@
 using CitizenFX.Core.Native;
 using CitizenFX.Core.UI;
 using RPOnline.Parts;
+using RPOnlineCore;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -34,15 +35,7 @@ namespace LevelScripts
                 {
                     API.SetNuiFocus(!API.IsNuiFocused(), !API.IsNuiFocused());
 
-                }
-
-                if (Game.IsControlJustPressed(0, Control.MultiplayerInfo))
-                { 
-                    if (Game.PlayerPed.IsInVehicle())
-                    {
-                        EngineAPI.PutVehicleIn(Game.PlayerPed.CurrentVehicle.DisplayName);
-                    }
-                }
+                } 
 
                 if (Game.IsControlJustPressed(0, Control.PhoneUp))
                 {
@@ -54,6 +47,10 @@ namespace LevelScripts
                         EngineAPI.DeleteVehicle(name);
                     }
                 }
+
+                var character = new Character();
+                var u = character.BankBalance;
+
 
                 if (!EngineAPI.GetMissionFlag())
                 {

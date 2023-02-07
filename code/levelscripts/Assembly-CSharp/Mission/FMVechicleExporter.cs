@@ -69,11 +69,11 @@ namespace LevelScripts.Mission
                         {
                             if (World.GetDistance(_targetVehicle.Position, _deliveryPoint) < 2f)
                             {
+                                var name = _targetVehicle.DisplayName;
                                 _targetVehicle.Delete();
-                                _targetVehicle = null;
-                                var stat = MPStat.GetStat<long>("MP0_WALLET_BALANCE");
-                                var stat2 = MPStat.GetStat<long>("BANK_BALANCE");
-                                stat.SetValue(stat.GetValue() + 1500);
+                                EngineAPI.PutVehicleIn(name);
+                                _targetVehicle = null; 
+                                EngineAPI.AddValueToWalletBalance(EngineAPI.GetCharacterWalletBalance() + 15000);
                             }
                             else
                             {
