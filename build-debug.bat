@@ -1,1 +1,1 @@
-dotnet cake --configuration debug
+dotnet cake --configuration debug --deployPath D:/ProjectOnline/resources/

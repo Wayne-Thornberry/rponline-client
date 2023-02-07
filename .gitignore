@@ -35,6 +35,7 @@ bld/
 
 # Other
 .config/
+package/
 vendor/
 tools/
 

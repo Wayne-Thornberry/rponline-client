@@ -4,6 +4,7 @@ var platform = "bin";
 var configuration = Argument("configuration", "release");
 var version = Argument("packageVersion", "0.0.1");
 var prerelease = Argument("prerelease", "");
+var deployPath = Argument("deployPath", "D:/ProjectOnline/resources/");
 
 var commonDir = "./code/common";
 var resourceDir = "./code/resources";
@@ -113,7 +114,7 @@ Task("Deploy")
     string name = dir.GetDirectoryName().ToLower();
 	string resourceName = $"{name}-{configuration}";
     string packagePath = $"./package/";
-    string deployPath = $"D:/ProjectOnline/resources/{name}/";
+    string finalDeployPath = $"{deployPath}{name}/";
     string repo = "./";
 
     //we need to build the directory for the game
@@ -133,14 +134,14 @@ Task("Deploy")
     CopyDirectory(repo + "./data", packagePath);
     DeleteFiles(packagePath + "CitizenFX.*");
 
-    if(DirectoryExists(deployPath))
+    if(DirectoryExists(finalDeployPath))
     { 
-        DeleteDirectory(deployPath, new DeleteDirectorySettings {
+        DeleteDirectory(finalDeployPath, new DeleteDirectorySettings {
                 Recursive = true,
                 Force = true
             });
     }
-    CopyDirectory(packagePath, deployPath) ;
+    CopyDirectory(packagePath, finalDeployPath) ;
 });
 
 //////////////////////////////////////////////////////////////////////
